@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import App from '../components/App';
 import { headData } from '../mock/data';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style/main.scss';
+import 'assets/scss/main.scss';
 
 export default () => {
   const { title, lang, description } = headData;
@@ -12,9 +12,9 @@ export default () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{title || 'Gatsby Simplefolio'}</title>
+        <title>{title || 'Cleo Buck - a Javascript Web developer who loves design'}</title>
         <html lang={lang || 'en'} />
-        <meta name="description" content={description || 'Gatsby Simplefolio'} />
+        <meta name="description" content={description || 'Cleo Buck - Web developer'} />
       </Helmet>
       <App />
     </>

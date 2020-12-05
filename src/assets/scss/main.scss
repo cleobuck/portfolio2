@@ -1,0 +1,11 @@
+@import './abstracts/mixins';
+@import './abstracts/variables';
+@import './abstracts/helpers';
+@import './abstracts/_responsive.scss';
+
+@import '../fonts/fonts.css';
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: $primary-color;
+}

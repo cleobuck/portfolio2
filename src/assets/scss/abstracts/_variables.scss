@@ -1,0 +1,50 @@
+// COLORS
+$primary-color: #022639;
+$secondary-color: #023047;
+$stand-out-color: #ffb703;
+$white-color: #fff;
+$dark-grey: #333333;
+
+// Breakpoints
+
+$bp-mobile: 22em; // 360px
+$bp-tablet: 48em; // 768px
+$bp-pc: 63em; // 1024px
+$bp-desktop: 85.375em; // 1366px
+$bp-xx: 120em; // 1920px
+$bp-xxx: 160em; // 2560px
+
+// phone
+
+@function widthOffset($size) {
+  $width: calc(#{$size} - 0.2px);
+  @return '(max-width: #{$width})';
+}
+
+$mq-max-mobile: widthOffset($bp-mobile);
+$mq-min-mobile: '(min-width: #{$bp-mobile})';
+
+//tablet
+
+$mq-max-tablet: widthOffset($bp-tablet);
+$mq-min-tablet: '(min-width: #{$bp-tablet})';
+
+// pc
+
+$mq-max-pc: widthOffset($bp-pc);
+$mq-min-pc: '(min-width: #{$bp-pc})';
+
+//desktop
+
+$mq-max-desktop: widthOffset($bp-desktop);
+$mq-min-desktop: '(min-width: #{$bp-desktop})';
+
+// xx
+
+$mq-max-xx: widthOffset($bp-xx);
+$mq-min-xx: '(min-width: #{$bp-xx})';
+
+// xxx
+
+$mq-max-xxx: widthOffset($bp-xxx);
+$mq-min-xxx: '(min-width: #{$bp-xxx})';
