@@ -1,0 +1,95 @@
+@import 'assets/scss/abstracts/_variables.scss';
+
+.skills {
+  height: calc(100vw * 2.051282051);
+  width: 100%;
+
+  section.background {
+    padding-top: 20px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    &:after,
+    &:before {
+      background-position: bottom left;
+      background-size: 100vw auto;
+    }
+    .cleoKid {
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    p {
+      color: white;
+      strong {
+        color: $stand-out-color;
+      }
+      background: $secondary-color;
+      width: 50%;
+      margin-left: 10px;
+
+      padding: 20px;
+    }
+
+    .skill-set {
+      position: absolute;
+      width: 100vw;
+      bottom: 0;
+      height: 100vw;
+
+      &:before {
+        // triangle
+        width: 0;
+        height: 0;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+        // transform: rotate(90deg) translate(-20%, 40%);
+
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+
+        border-bottom: 100vw solid $primary-color;
+      }
+
+      .individual-skill {
+        color: white;
+        width: 75px;
+        padding: 5px;
+        margin-bottom: 0;
+        img {
+          width: 100%;
+        }
+        figcaption {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
+    .sub-skills,
+    .frontend-skills,
+    .skill-main {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      width: 100vw;
+      &.sub-skills {
+        padding: 0 10vw;
+        bottom: 0;
+      }
+      &.frontend-skills {
+        bottom: 33.33333%;
+        padding: 0 25vw;
+      }
+      &.skill-main {
+        bottom: 60.66666%;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,34 +1,29 @@
-import React, { useContext } from 'react';
-import Fade from 'react-reveal/Fade';
-import { Container } from 'react-bootstrap';
-import PortfolioContext from '../../context/context';
-import Title from '../Title/Title';
+import React from 'react';
+import styles from './style.module.scss';
+import GitHub from 'assets/images/GitHub.svg';
+import Mail from 'assets/images/Email.svg';
+import Linkedin from 'assets/images/LinkedIn.svg';
 
 const Contact = () => {
-  const { contact } = useContext(PortfolioContext);
-  const { cta, btn, email } = contact;
-
   return (
-    <section id="contact">
-      <Container>
-        <Title title="Contact" />
-        <Fade bottom duration={1000} delay={800} distance="30px">
-          <div className="contact-wrapper">
-            <p className="contact-wrapper__text">
-              {cta || 'Would you like to work with me? Awesome!'}
-            </p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-btn cta-btn--resume"
-              href={email ? `mailto:${email}` : 'https://github.com/cobidev/react-simplefolio'}
-            >
-              {btn || "Let's Talk"}
-            </a>
-          </div>
-        </Fade>
-      </Container>
-    </section>
+    <footer className={styles.contact}>
+      <p>
+        I like to work with those who want to leave the world as they found it, or maybe even a
+        little better...
+      </p>
+
+      <div className={styles.socialIcons}>
+        <a>
+          <img src={GitHub} alt="github" />
+        </a>
+        <a>
+          <img src={Mail} alt="email" />
+        </a>
+        <a>
+          <img src={Linkedin} alt="linked-in" />
+        </a>
+      </div>
+    </footer>
   );
 };
 

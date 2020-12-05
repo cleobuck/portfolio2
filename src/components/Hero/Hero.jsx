@@ -1,17 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import Img from 'gatsby-image';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/context';
+
 import FullBackground from './FullBackground';
 import styles from './style.module.scss';
 import eye from 'assets/images/eye.png';
 import Navigation from 'components/navigation/Navigation';
 
 const Header = () => {
-  const { hero } = useContext(PortfolioContext);
-  const { title, name, subtitle, cta } = hero;
-
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
