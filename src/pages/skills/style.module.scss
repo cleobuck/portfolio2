@@ -1,11 +1,15 @@
 @import 'assets/scss/abstracts/_variables.scss';
 
 .skills {
+  // full height of background calculated according to width
   height: calc(100vw * 2.051282051);
+
+  @media #{$mq-min-pc} {
+    height: 100vh;
+  }
   width: 100%;
 
   section.background {
-    padding-top: 20px;
     position: relative;
     height: 100%;
     width: 100%;
@@ -15,11 +19,16 @@
       background-position: bottom left;
       background-size: 100vw auto;
       @media #{$mq-min-pc} {
-        background-position: top left;
+        background-position: top 50% left;
+        background-size: cover;
       }
     }
     .cleoKid {
       width: 100vw;
+      @media #{$mq-min-pc} {
+        width: auto;
+        height: 100vh;
+      }
       position: absolute;
       top: 0;
       left: 0;
@@ -31,7 +40,14 @@
       }
       background: $secondary-color;
       width: 50%;
+
+      @media #{$mq-min-pc} {
+        width: 30%;
+      }
       margin-left: 10px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
 
       padding: 20px;
     }
@@ -41,6 +57,10 @@
       width: 100vw;
       bottom: 0;
       height: 100vw;
+
+      @media #{$mq-min-pc} {
+        display: none;
+      }
 
       &:before {
         // triangle

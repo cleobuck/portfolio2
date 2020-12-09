@@ -1,9 +1,10 @@
 @import 'assets/scss/abstracts/_variables.scss';
 .nav {
-  position: absolute;
-  width: 50vw;
-  z-index: 10;
+  position: fixed;
+  width: 0;
+  z-index: 100000;
   right: 0;
+  transition: width 0.5s;
 
   top: 0;
 
@@ -15,8 +16,11 @@
 
   &.open-nav {
     background: $primary-color;
+    width: 50vw;
+    box-shadow: -2px -2px 5px darken($primary-color, 5%);
     @media #{$mq-min-tablet} {
       background: none;
+      box-shadow: none;
     }
   }
 
@@ -117,6 +121,7 @@
 
 .menu {
   opacity: 0;
+  transition: none;
 
   @media #{$mq-min-tablet} {
     transform: translateX(1000px);
@@ -124,8 +129,9 @@
   }
 
   a {
-    color: white;
+    color: white !important;
     text-decoration: none;
+    cursor: pointer;
     margin-right: 40px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -134,14 +140,19 @@
     @media #{$mq-min-tablet} {
       margin-top: 0;
     }
+    &.active {
+      font-size: 1.6rem;
+      color: black;
+    }
   }
   &.open-menu {
     opacity: 1;
-    transition-delay: 0s;
+    transition: opacity 0.5s 0.2s ease;
     position: relative;
     z-index: 50;
-    // display: flex;
+    display: flex;
     flex-direction: column;
+
     height: 100vh;
 
     margin-top: 30px;

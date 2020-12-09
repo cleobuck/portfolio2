@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './Hero/Hero';
-import Skills from './Skills/Skills';
-import Works from './Works/Works';
-import Contact from './Contact/Contact';
+import Home from '../pages/home';
+import Skills from '../pages/skills';
+import Works from '../pages/works';
+import Contact from 'pages/contact';
+import Navigation from './navigation/Navigation';
+import { useResponsiveContext } from 'context';
 
 function App() {
+  const { state } = useResponsiveContext();
+
+  const { isMobile, home, skills, works, contact } = state;
+
   return (
     <>
-      <Hero />
-      <Skills />
-      <Works />
-      <Contact />
+      <Navigation />
+      {(home || isMobile) && <Home />}
+      {(skills || isMobile) && <Skills />}
+      {(works || isMobile) && <Works />}
+      {(contact || isMobile) && <Contact />}
     </>
   );
 }

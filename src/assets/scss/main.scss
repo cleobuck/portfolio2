@@ -2,10 +2,21 @@
 @import './abstracts/variables';
 @import './abstracts/helpers';
 @import './abstracts/_responsive.scss';
+@import './_animation.scss';
 
 @import '../fonts/fonts.css';
 
 body {
   font-family: 'Oswald', sans-serif;
   background: $primary-color;
+  height: 100%;
+}
+
+body,
+html {
+  height: 100%;
+
+  @media #{$mq-min-pc} {
+    overflow: hidden;
+  }
 }

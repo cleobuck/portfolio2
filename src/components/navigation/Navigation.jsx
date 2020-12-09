@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import burgerLine from 'assets/images/burger-line.svg';
 import styles from './style.module.scss';
+import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { useResponsiveContext } from '../../context';
 
 export default function Navigation() {
   const [openMenu, toggleMenu] = useState(false);
+
+  const { state, dispatch } = useResponsiveContext();
+  const { isMobile } = state;
+
+  const navAnimate = (id) => {
+    if (isMobile) {
+      toggleMenu(false);
+    } else {
+      dispatch({ type: 'scroll', payload: id });
+    }
+  };
 
   return (
     <nav className={`${styles.nav} ${openMenu ? styles.openNav : ''}`}>
@@ -20,10 +33,48 @@ export default function Navigation() {
       </button>
       <input type="checkbox" id="menu" checked={openMenu} className={styles.menuCheckbox} />{' '}
       <div className={`${styles.menu} ${openMenu ? styles.openMenu : ''}`}>
-        <a href="#bla">Home</a>
-        <a href="#bla">Skills</a>
-        <a href="#bla">Works</a>
-        <a href="#bla">Contact</a>
+        <Link
+          activeClass="active"
+          to="hero"
+          spy={true}
+          smooth={true}
+          duration={500}
+          onClick={() => navAnimate('home')}
+        >
+          Home
+        </Link>
+        <Link
+          activeClass="active"
+          to="skills"
+          spy={true}
+          smooth={true}
+          duration={500}
+          onClick={() => navAnimate('skills')}
+        >
+          Skills
+        </Link>
+        <Link
+          activeClass="active"
+          to="works"
+          spy={true}
+          smooth={true}
+          offset={-20}
+          duration={500}
+          onClick={() => navAnimate('works')}
+        >
+          Works
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
+          onClick={() => navAnimate('contact')}
+        >
+          Contact
+        </Link>
       </div>
     </nav>
   );

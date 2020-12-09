@@ -6,3 +6,12 @@
 6. navigation
 7. animations
 8. optimization
+
+
+
+
+1. create context for mobile
+2. scroll blocked when not on mobile when changing page
+
+
+https://dev.to/hoshikitsunoda/using-gatsby-like-single-page-application-e36
