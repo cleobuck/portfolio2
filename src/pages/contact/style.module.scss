@@ -7,20 +7,35 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
+  position: relative;
   p {
     color: white;
-    padding: 10px;
-    width: 50%;
+    margin-top: 100px;
+    @media #{$mq-min-pc} {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
     text-align: center;
-    align-self: flex-start;
+    margin-bottom: 50px;
   }
   .socialIcons {
     display: flex;
     flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
     img {
-      margin-bottom: 50px;
-      margin-top: 50px;
+      width: 45px;
+    }
+
+    @media #{$mq-min-pc} {
+      flex-direction: row;
+      width: 100%;
+      height: 100vh;
+      padding: 0 35vw;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
