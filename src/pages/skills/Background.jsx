@@ -24,7 +24,7 @@ const Background = ({ className, children, setLoad }) => {
         }
         small: file(relativePath: { eq: "chainsaw-background-small.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 768, quality: 90) {
+            fluid(maxWidth: 1024, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -38,7 +38,7 @@ const Background = ({ className, children, setLoad }) => {
     small.childImageSharp.fluid,
     {
       ...medium.childImageSharp.fluid,
-      media: `(min-width: 768px)`,
+      media: `(min-width: 1024px)`,
     },
     {
       ...desktop.childImageSharp.fluid,

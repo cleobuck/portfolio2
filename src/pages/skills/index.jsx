@@ -30,19 +30,21 @@ const Skills = ({ isMobile }) => {
           </p>
 
           <section className={styles.skillSet}>
-            <div className={styles.skillMain}>
-              <Skill image={react} title="React" visible={true} />
-            </div>
+            <div className={styles.skillsWrapper}>
+              <div className={styles.skillMain}>
+                <Skill image={react} title="React" visible={true} />
+              </div>
 
-            <div className={styles.frontendSkills}>
-              <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
-              <Skill image={SASS} title="SASS" visible={false} />
-            </div>
+              <div className={styles.frontendSkills}>
+                <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
+                <Skill image={SASS} title="SASS" visible={false} />
+              </div>
 
-            <div className={styles.subSkills}>
-              <Skill image={Wordpress} title="Wordpress" visible={true} />
-              <Skill image={Python} title="Python" visible={true} />
-              <Skill image={Flask} title="Flask" visible={true} />
+              <div className={styles.subSkills}>
+                <Skill image={Wordpress} title="Wordpress" visible={true} />
+                <Skill image={Python} title="Python" visible={true} />
+                <Skill image={Flask} title="Flask" visible={true} />
+              </div>
             </div>
           </section>
         </Background>

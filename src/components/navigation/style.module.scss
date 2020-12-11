@@ -18,13 +18,13 @@
     background: $primary-color;
     width: 50vw;
     box-shadow: -2px -2px 5px darken($primary-color, 5%);
-    @media #{$mq-min-tablet} {
+    @media #{$mq-min-pc} {
       background: none;
       box-shadow: none;
     }
   }
 
-  @media #{$mq-min-tablet} {
+  @media #{$mq-min-pc} {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -32,7 +32,7 @@
   }
   padding-top: 20px;
 
-  @media #{$mq-min-tablet} {
+  @media #{$mq-min-pc} {
     height: 75px;
   }
   font-family: 'Oswald';
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: flex-start;
 
-    @media #{$mq-min-tablet} {
+    @media #{$mq-min-pc} {
       height: 75px;
       order: 2;
     }
@@ -76,7 +76,7 @@
 
 .menu-checkbox:checked + .menu {
   display: flex;
-  @media #{$mq-min-tablet} {
+  @media #{$mq-min-pc} {
     display: block;
   }
 }
@@ -123,7 +123,7 @@
   opacity: 0;
   transition: none;
 
-  @media #{$mq-min-tablet} {
+  @media #{$mq-min-pc} {
     transform: translateX(1000px);
     transition: opacity 0.275s 0.22s ease-in, transform 0.275s ease-out, height 0.275s 0.22s ease-in;
   }
@@ -137,7 +137,7 @@
     font-weight: bold;
     text-align: right;
     margin-top: 20px;
-    @media #{$mq-min-tablet} {
+    @media #{$mq-min-pc} {
       margin-top: 0;
     }
     &.active {
@@ -157,7 +157,7 @@
 
     margin-top: 30px;
 
-    @media #{$mq-min-tablet} {
+    @media #{$mq-min-pc} {
       transform: translateX(2px);
       height: 36px;
       margin-top: 0;

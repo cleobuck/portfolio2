@@ -8,11 +8,16 @@
 }
 
 @keyframes appear {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+
+  99% {
     opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
   }
 }
 

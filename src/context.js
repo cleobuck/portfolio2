@@ -20,7 +20,7 @@ export const ResponsiveProvider = ({ children }) => {
   };
 
   const responsiveVars = {
-    isMobile: window.innerWidth < 768,
+    isMobile: window.innerWidth < 1024,
     home: true,
     skills: false,
     works: false,
