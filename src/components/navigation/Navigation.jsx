@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import burgerLine from 'assets/images/burger-line.svg';
 import styles from './style.module.scss';
-import { Link } from 'react-scroll';
+import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import { useResponsiveContext } from '../../context';
 
 export default function Navigation() {

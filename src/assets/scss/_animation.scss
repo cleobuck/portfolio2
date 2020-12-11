@@ -12,12 +12,8 @@
     opacity: 1;
   }
 
-  99% {
-    opacity: 0;
-  }
-
   100% {
-    visibility: hidden;
+    opacity: 0;
   }
 }
 

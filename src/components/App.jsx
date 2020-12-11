@@ -14,6 +14,7 @@ function App() {
   return (
     <>
       <Navigation />
+
       {(home || isMobile) && <Home />}
       {(skills || isMobile) && <Skills />}
       {(works || isMobile) && <Works />}
