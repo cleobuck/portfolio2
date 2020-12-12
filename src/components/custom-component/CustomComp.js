@@ -8,10 +8,13 @@ export default function CustomComp({ children, visible, id, className }) {
     setMobile(window.innerWidth < 1024);
   });
 
+  const style = { display: 'none' };
+
   return (
     <Reveal effect="appearFromDark">
       <section
         className={`${className} ${isMobile ? '' : 'isDesktop'} ${visible ? 'visible' : ''}`}
+        style={!isMobile && !visible ? style : ''}
         id={id}
       >
         {children}
