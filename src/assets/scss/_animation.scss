@@ -39,3 +39,33 @@
     }
   }
 }
+
+// PROJECT ANIMATIONS
+
+.octopus-animate {
+  animation: octopus 1s forwards;
+}
+.lola-animate {
+  animation: lola 1s forwards;
+}
+
+.aubonmarche-animate {
+  animation: aubonmarche 1s forwards;
+}
+
+@mixin animation-mixin($name, $left, $bottom) {
+  @keyframes #{$name} {
+    from {
+      left: $left;
+      bottom: $bottom;
+    }
+    to {
+      left: 12vw;
+      bottom: 5vh;
+    }
+  }
+}
+
+@include animation-mixin(octopus, 75vw, 5vh);
+@include animation-mixin(lola, 60vw, 40vh);
+@include animation-mixin(aubonmarche, 12vw, 5vh);

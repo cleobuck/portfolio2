@@ -8,14 +8,17 @@ export default function CustomComp({ children, visible, id, className }) {
     setMobile(window.innerWidth < 1024);
   });
 
-  const style = { display: 'none' };
+  const style = { display: 'none', overflow: 'hidden' };
 
   return (
     <Reveal effect="appearFromDark">
       <section
         className={`${className} ${isMobile ? '' : 'isDesktop'} ${visible ? 'visible' : ''}`}
-        style={!isMobile && !visible ? style : ''}
+        style={!isMobile && !visible ? style : { overflow: 'hidden' }}
         id={id}
+        role={id === 'home' ? 'none' : 'heading'}
+        aria-level={id === 'home' ? '' : 3}
+        aria-label={id}
       >
         {children}
       </section>

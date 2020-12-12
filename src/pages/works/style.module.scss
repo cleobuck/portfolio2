@@ -26,21 +26,19 @@
     z-index: 1;
 
     &:not(.background) {
+      // perspective: 300px;
+      // transform-style: preserve-3d;
+      transition: 1s all;
       cursor: pointer;
+      box-shadow: -5px -5x 10px black;
       &:hover {
-        &:after {
-          position: absolute;
-          top: 0;
-          left: 0;
-          content: '';
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-        }
+        transform: scale(1.1);
+        z-index: 100000;
+        perspective-origin: 10px 10px;
       }
-
-      img {
-        cursor: pointer;
+      &.discard {
+        transform: perspective(300px) translate3D(-100%, -100%, -2000px);
+        opacity: 0;
       }
     }
     &.background {
@@ -66,30 +64,31 @@
     }
 
     &.lola {
-      right: 16vw;
-      top: 20vh;
+      left: 60vw;
+      bottom: 40vh;
       width: 140px;
       @media #{$mq-min-pc} {
-        width: 200px;
-        right: 20vw;
+        width: 250px;
       }
     }
     &.octopus {
-      left: 3vw;
-      top: 30vh;
+      left: 75vw;
+      bottom: 5vh;
       width: 140px;
       height: 400px;
       overflow: hidden;
 
       @media #{$mq-min-pc} {
-        width: 200px;
-        left: 10vw;
+        width: 250px;
+        right: 3vw;
+        bottom: 5vh;
       }
     }
     &.aubonmarche {
-      right: 3vw;
-      top: 35vh;
-      width: 170px;
+      left: 12vw;
+      bottom: 5vh;
+
+      width: 250px;
     }
   }
 }

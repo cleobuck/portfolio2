@@ -1,20 +1,30 @@
-import React from 'react';
-import Tilt from 'react-tilt';
+import React, { useState, useEffect } from 'react';
+import styles from './style.module.scss';
 
-export default function Work() {
+export default function Work({ children, focusedProject, giveFocus, data }) {
+  const [inFocusMode, setInFocus] = useState(false);
+
+  const [toDiscard, setDiscard] = useState(false);
+
+  useEffect(() => {
+    setInFocus(Object.values(focusedProject).indexOf(true) !== -1);
+
+    setDiscard(focusedProject[data.name] === false || focusedProject[data.name] === undefined);
+  }, [focusedProject]);
+
   return (
-    <Tilt
-      options={{
-        reverse: false,
-        max: 8,
-        perspective: 1000,
-        scale: 1,
-        speed: 300,
-        transition: true,
-        axis: null,
-        reset: true,
-        easing: 'cubic-bezier(.03,.98,.52,.99)',
-      }}
-    ></Tilt>
+    <>
+      <article>
+        <figure
+          className={`${styles[data.name]} ${
+            inFocusMode ? (toDiscard ? styles.discard : data.name + '-animate') : ''
+          }`}
+          onClick={() => giveFocus(data.name)}
+        >
+          <img src={data.src} alt={data.alt} />
+          {children}
+        </figure>
+      </article>
+    </>
   );
 }
