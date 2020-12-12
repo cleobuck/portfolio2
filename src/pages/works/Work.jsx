@@ -22,8 +22,8 @@ export default function Work({ children, focusedProject, giveFocus, data }) {
           onClick={() => giveFocus(data.name)}
         >
           <img src={data.src} alt={data.alt} />
-          {children}
         </figure>
+        {children}
       </article>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Reveal from 'react-reveal/Reveal';
+import { useResponsiveContext } from 'context';
 
 export default function CustomComp({ children, visible, id, className }) {
   const [isMobile, setMobile] = useState(false);

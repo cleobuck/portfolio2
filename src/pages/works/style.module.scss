@@ -20,16 +20,41 @@
       width: 20vw;
     }
   }
-
+  article {
+    .description {
+      right: -10000px;
+      opacity: 0;
+      transition: 2s opacity 0.5s;
+      border-radius: 10px;
+      &.visible {
+        padding: 20px;
+        display: block;
+        opacity: 1;
+        position: absolute;
+        right: 50px;
+        top: 25vh;
+        color: white;
+        background: $secondary-color;
+        width: 30vw;
+        p {
+          font-size: 1rem;
+        }
+        a {
+          float: right;
+        }
+      }
+    }
+  }
   figure {
     position: absolute;
     z-index: 1;
 
     &:not(.background) {
-      // perspective: 300px;
-      // transform-style: preserve-3d;
       transition: 1s all;
       cursor: pointer;
+      img {
+        border-radius: 10px;
+      }
       box-shadow: -5px -5x 10px black;
       &:hover {
         transform: scale(1.1);
