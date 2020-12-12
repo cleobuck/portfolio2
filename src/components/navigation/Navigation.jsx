@@ -35,7 +35,7 @@ export default function Navigation() {
       <div className={`${styles.menu} ${openMenu ? styles.openMenu : ''}`}>
         <Link
           activeClass="active"
-          to="hero"
+          to="home"
           spy={true}
           smooth={true}
           duration={500}

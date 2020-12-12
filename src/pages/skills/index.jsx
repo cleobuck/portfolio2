@@ -13,43 +13,39 @@ import Skill from './Skill';
 import Reveal from 'react-reveal/Reveal';
 import CleoKid from './images/CleoKid';
 
-const Skills = ({ isMobile }) => {
+const Skills = () => {
   const [isLoaded, setLoad] = useState();
 
   return (
-    <Reveal effect="appearFromDark">
-      <section className={styles.skills} id="skills">
-        <Background setLoad={() => setLoad(true)}>
-          <CleoKid />
-          <p>
-            I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
-            realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing
-            gets my <strong>adrenaline </strong>
-            pumping as much as problem solving, especially with <strong>algorithms</strong>. Here
-            are my skills:
-          </p>
+    <Background setLoad={() => setLoad(true)}>
+      <CleoKid />
+      <p>
+        I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
+        realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing gets
+        my <strong>adrenaline </strong>
+        pumping as much as problem solving, especially with <strong>algorithms</strong>. Here are my
+        skills:
+      </p>
 
-          <section className={styles.skillSet}>
-            <div className={styles.skillsWrapper}>
-              <div className={styles.skillMain}>
-                <Skill image={react} title="React" visible={true} />
-              </div>
+      <section className={styles.skillSet}>
+        <div className={styles.skillsWrapper}>
+          <div className={styles.skillMain}>
+            <Skill image={react} title="React" visible={true} />
+          </div>
 
-              <div className={styles.frontendSkills}>
-                <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
-                <Skill image={SASS} title="SASS" visible={false} />
-              </div>
+          <div className={styles.frontendSkills}>
+            <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
+            <Skill image={SASS} title="SASS" visible={false} />
+          </div>
 
-              <div className={styles.subSkills}>
-                <Skill image={Wordpress} title="Wordpress" visible={true} />
-                <Skill image={Python} title="Python" visible={true} />
-                <Skill image={Flask} title="Flask" visible={true} />
-              </div>
-            </div>
-          </section>
-        </Background>
+          <div className={styles.subSkills}>
+            <Skill image={Wordpress} title="Wordpress" visible={true} />
+            <Skill image={Python} title="Python" visible={true} />
+            <Skill image={Flask} title="Flask" visible={true} />
+          </div>
+        </div>
       </section>
-    </Reveal>
+    </Background>
   );
 };
 

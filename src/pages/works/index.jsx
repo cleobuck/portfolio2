@@ -9,26 +9,24 @@ import Reveal from 'react-reveal/Reveal';
 
 const Projects = () => {
   return (
-    <Reveal effect="appearFromDark">
-      <section className={styles.works} id="works">
-        <h3>And some of my projects...</h3>
+    <>
+      <h3>And some of my projects...</h3>
 
-        <figure className={styles.background}>
-          <img src={background} alt="" />
-        </figure>
-        <figure className={styles.lola}>
-          <img src={Lola} alt="Illustrator Lola Buck's portfolio" />
-        </figure>
+      <figure className={styles.background}>
+        <img src={background} alt="" />
+      </figure>
+      <figure className={styles.lola}>
+        <img src={Lola} alt="Illustrator Lola Buck's portfolio" />
+      </figure>
 
-        <figure className={styles.octopus}>
-          <img src={Octopus} alt="NGO Octopus" />
-        </figure>
+      <figure className={styles.octopus}>
+        <img src={Octopus} alt="NGO Octopus" />
+      </figure>
 
-        <figure className={styles.aubonmarche}>
-          <img src={Aubonmarche} alt="App for 'Au Bon Marché', a social shop" />
-        </figure>
-      </section>
-    </Reveal>
+      <figure className={styles.aubonmarche}>
+        <img src={Aubonmarche} alt="App for 'Au Bon Marché', a social shop" />
+      </figure>
+    </>
   );
 };
 

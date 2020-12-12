@@ -6,21 +6,15 @@ export const ResponsiveProvider = ({ children }) => {
   const reducer = (state, action) => {
     if (action.type === 'scroll') {
       let newState = {};
-      Object.keys(state).map((key) => {
-        if (key === 'isMobile') {
-          return (newState['isMobile'] = state['isMobile']);
-        } else if (key === action.payload) {
-          newState[key] = true;
-        } else {
-          newState[key] = false;
-        }
-      });
+      Object.keys(state).map((key) =>
+        key === action.payload ? (newState[key] = true) : (newState[key] = false)
+      );
+
       return { ...newState };
     }
   };
 
   const responsiveVars = {
-    isMobile: window.innerWidth < 1024,
     home: true,
     skills: false,
     works: false,
@@ -33,5 +27,4 @@ export const ResponsiveProvider = ({ children }) => {
     <ResponsiveContext.Provider value={{ state, dispatch }}>{children}</ResponsiveContext.Provider>
   );
 };
-
 export const useResponsiveContext = () => useContext(ResponsiveContext);
