@@ -43,29 +43,68 @@
 // PROJECT ANIMATIONS
 
 .octopus-animate {
-  animation: octopus 1s forwards;
+  animation: octopus 2s forwards;
 }
 .lola-animate {
-  animation: lola 1s forwards;
+  animation: lola 2s forwards;
 }
 
 .aubonmarche-animate {
-  animation: aubonmarche 1s forwards;
+  animation: aubonmarche 2s forwards;
 }
 
-@mixin animation-mixin($name, $left, $bottom) {
+.octopus-animate-reverse {
+  animation: octopusReverse 2s forwards;
+}
+.lola-animate-reverse {
+  animation: lolaReverse 2s forwards;
+}
+
+.aubonmarche-animate-reverse {
+  animation: aubonmarcheReverse 2s forwards;
+}
+
+@mixin animation-mixin($name, $left, $bottom, $height) {
   @keyframes #{$name} {
-    from {
+    0% {
+      z-index: 0;
+    }
+
+    20% {
       left: $left;
       bottom: $bottom;
+
+      height: $height;
     }
-    to {
+    100% {
       left: 12vw;
       bottom: 5vh;
+      z-index: 0;
+      height: 80vh;
     }
   }
 }
 
-@include animation-mixin(octopus, 75vw, 5vh);
-@include animation-mixin(lola, 60vw, 40vh);
-@include animation-mixin(aubonmarche, 12vw, 5vh);
+@mixin reverse-animation-mixin($name, $left, $bottom, $height) {
+  @keyframes #{$name} {
+    from {
+      left: 12vw;
+      bottom: 5vh;
+      z-index: 0;
+      height: 80vh;
+    }
+    to {
+      left: $left;
+      bottom: $bottom;
+      height: $height;
+    }
+  }
+}
+
+@include animation-mixin(octopus, 75vw, 5vh, 70vh);
+@include animation-mixin(lola, 60vw, 30vh, 40vh);
+@include animation-mixin(aubonmarche, 12vw, 5vh, 70vh);
+
+@include reverse-animation-mixin(octopusReverse, 75vw, 5vh, 70vh);
+@include reverse-animation-mixin(lolaReverse, 60vw, 30vh, 40vh);
+@include reverse-animation-mixin(aubonmarcheReverse, 12vw, 5vh, 70vh);

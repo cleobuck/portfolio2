@@ -15,6 +15,7 @@ export default function Navigation() {
       toggleMenu(false);
     } else {
       dispatch({ type: 'scroll', payload: id });
+      toggleMenu(false);
     }
   };
 

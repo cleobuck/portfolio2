@@ -12,13 +12,26 @@ import { useResponsiveContext } from 'context';
 
 const Projects = () => {
   const [focusedProject, setFocus] = useState({ lola: false, octopus: false, aubonmarche: false });
+  const [focusOut, setFocusOut] = useState('');
   const { state } = useResponsiveContext();
   const giveFocus = (focus) => {
     setFocus({ [focus]: true });
   };
 
-  useEffect(() => {
+  const resetFocus = (currentFocus = false) => {
+    if (currentFocus) {
+      setFocusOut(currentFocus);
+      setTimeout(() => setFocusOut(''), 2000);
+    } else {
+      setFocusOut('');
+    }
+
     setFocus({ lola: false, octopus: false, aubonmarche: false });
+  };
+
+  useEffect(() => {
+    resetFocus();
+    setFocusOut();
   }, [state]);
 
   const data = {
@@ -41,17 +54,26 @@ const Projects = () => {
 
   return (
     <>
-      <h3>And some of my projects...</h3>
+      <h3 className={Object.values(focusedProject).indexOf(true) !== -1 ? styles.hidden : ''}>
+        And some of my projects...
+      </h3>
 
       <figure className={styles.background}>
         <img src={background} alt="" />
       </figure>
 
-      <Work focusedProject={focusedProject} giveFocus={giveFocus} data={data.lola}>
+      <Work
+        focusedProject={focusedProject}
+        giveFocus={giveFocus}
+        data={data.lola}
+        focusOut={focusOut === 'lola'}
+      >
         <Description
           visible={focusedProject.lola}
           title="Lola Buck's portfolio"
           href="https://dev.lolabuck.com/"
+          close={resetFocus}
+          name="lola"
         >
           <p>
             I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
@@ -62,11 +84,18 @@ const Projects = () => {
         </Description>
       </Work>
 
-      <Work focusedProject={focusedProject} giveFocus={giveFocus} data={data.octopus}>
+      <Work
+        focusedProject={focusedProject}
+        giveFocus={giveFocus}
+        focusOut={focusOut === 'octopus'}
+        data={data.octopus}
+      >
         <Description
           visible={focusedProject.octopus}
           title="Octopus NGO's website"
           href="http://octopus.cleobuck.com/"
+          close={resetFocus}
+          name="octopus"
         >
           <p>
             I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
@@ -77,11 +106,18 @@ const Projects = () => {
         </Description>
       </Work>
 
-      <Work focusedProject={focusedProject} giveFocus={giveFocus} data={data.aubonmarche}>
+      <Work
+        focusedProject={focusedProject}
+        giveFocus={giveFocus}
+        data={data.aubonmarche}
+        focusOut={focusOut === 'aubonmarche'}
+      >
         <Description
           visible={focusedProject.aubonmarche}
           title="Au Bon Marche - A social shop"
           href="https://aubonmarchelbv.pythonanywhere.com/"
+          close={resetFocus}
+          name="aubonmarche"
         >
           <p>
             I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
