@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import GitHub from 'assets/images/GitHub.svg';
 import Mail from 'assets/images/Email.svg';
 import Linkedin from 'assets/images/LinkedIn.svg';
-import Reveal from 'react-reveal/Reveal';
+import background from 'assets/images/cleo-chair.png';
 
 const Contact = () => {
   return (
@@ -14,16 +14,20 @@ const Contact = () => {
       </p>
 
       <div className={styles.socialIcons}>
-        <a>
+        <a href="https://github.com/cleobuck">
           <img src={GitHub} alt="github" />
-        </a>
-        <a>
-          <img src={Mail} alt="email" />
         </a>
         <a>
           <img src={Linkedin} alt="linked-in" />
         </a>
+        <a href="mailto:cleo.buck@gmail.com">
+          <img src={Mail} alt="email" />
+        </a>
       </div>
+
+      <figure className={styles.background}>
+        <img src={background} alt="" />
+      </figure>
     </>
   );
 };

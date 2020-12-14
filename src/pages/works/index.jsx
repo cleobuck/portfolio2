@@ -5,9 +5,9 @@ import Lola from 'assets/images/lola.png';
 import Octopus from 'assets/images/octopus.jpg';
 import Aubonmarche from 'assets/images/aubonmarche.jpg';
 import background from 'assets/images/cleo-chair.png';
-import Reveal from 'react-reveal/Reveal';
+
 import Work from './Work';
-import Description from './Description';
+
 import { useResponsiveContext } from 'context';
 
 const Projects = () => {

@@ -59,7 +59,7 @@ export default function Navigation() {
           to="works"
           spy={true}
           smooth={true}
-          offset={-20}
+          // offset={-20}
           duration={500}
           onClick={() => navAnimate('works')}
         >

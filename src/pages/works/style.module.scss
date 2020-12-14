@@ -16,7 +16,9 @@
     padding: 10px;
 
     &.hidden {
-      display: none;
+      @media #{$mq-min-tablet} {
+        display: none;
+      }
     }
 
     // @media #{$mq-min-pc} {
