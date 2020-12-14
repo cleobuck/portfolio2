@@ -1,11 +1,11 @@
 @import 'assets/scss/abstracts/_variables.scss';
 
 .works {
-  height: 100vh;
   width: 100vw;
   position: relative;
-  @media #{$mq-min-pc} {
+  @media #{$mq-min-tablet} {
     overflow-y: hidden;
+    height: 100vh;
   }
 
   h3 {
@@ -73,8 +73,12 @@
     }
   }
   figure {
-    position: absolute;
-    z-index: 1;
+    width: 70%;
+    margin: 20px auto;
+    @media #{$mq-min-tablet} {
+      position: absolute;
+      z-index: 1;
+    }
 
     &:not(.background) {
       transition: 1s all;
@@ -97,18 +101,45 @@
         opacity: 0;
       }
     }
+
+    img {
+      width: 100%;
+      @media #{$mq-min-tablet} {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    &.lola {
+      @media #{$mq-min-pc} {
+        height: 40vh;
+        left: 60vw;
+        bottom: 40vh;
+      }
+    }
+    &.octopus {
+      @media #{$mq-min-pc} {
+        height: 70vh;
+        left: 75vw;
+        bottom: 5vh;
+
+        overflow: hidden;
+      }
+    }
+    &.aubonmarche {
+      @media #{$mq-min-pc} {
+        left: 12vw;
+        bottom: 5vh;
+        height: 70vh;
+      }
+    }
     &.background {
       display: none;
-
       z-index: 2;
       bottom: 0;
-      justify-content: center;
-      img {
-        width: 70%;
-      }
-      @media #{$mq-min-pc} {
-        display: flex;
 
+      @media #{$mq-min-tablet} {
+        display: flex;
         width: 40vw;
         bottom: -50vh;
         left: 50%;
@@ -117,36 +148,6 @@
         }
         transform: translateX(-50%);
       }
-    }
-    img {
-      height: 100%;
-    }
-
-    &.lola {
-      left: 60vw;
-      bottom: 40vh;
-      height: 40vh;
-      @media #{$mq-min-pc} {
-        width: 250px;
-      }
-    }
-    &.octopus {
-      left: 75vw;
-      bottom: 5vh;
-
-      overflow: hidden;
-
-      @media #{$mq-min-pc} {
-        height: 70vh;
-        left: 75vw;
-        bottom: 5vh;
-      }
-    }
-    &.aubonmarche {
-      left: 12vw;
-      bottom: 5vh;
-
-      height: 70vh;
     }
   }
 }

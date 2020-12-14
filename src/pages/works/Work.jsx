@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Description from './Description';
 import styles from './style.module.scss';
 
-export default function Work({ children, focusedProject, giveFocus, data, focusOut }) {
+export default function Work({ children, focusedProject, giveFocus, data, focusOut, close }) {
   const [inFocusMode, setInFocus] = useState(false);
 
   const [toDiscard, setDiscard] = useState(false);
@@ -27,7 +28,16 @@ export default function Work({ children, focusedProject, giveFocus, data, focusO
         >
           <img src={data.src} alt={data.alt} />
         </figure>
-        {children}
+        <Description
+          visible={focusedProject[data.name]}
+          title={data.title}
+          href={data.href}
+          close={close}
+          name={data.name}
+        >
+          {' '}
+          {children}
+        </Description>
       </article>
     </>
   );

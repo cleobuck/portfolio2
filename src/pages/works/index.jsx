@@ -39,16 +39,19 @@ const Projects = () => {
       name: 'lola',
       src: Lola,
       alt: "Lola Buck's portfolio",
+      href: 'https://dev.lolabuck.com/',
     },
     octopus: {
       name: 'octopus',
       src: Octopus,
       alt: "NGO Octopus's website",
+      href: 'http://octopus.cleobuck.com/',
     },
     aubonmarche: {
       name: 'aubonmarche',
       src: Aubonmarche,
-      alt: "App for 'Au Bon Marché', a social shop",
+      alt: 'Au Bon Marche - A social shop',
+      href: 'https://aubonmarchelbv.pythonanywhere.com/',
     },
   };
 
@@ -65,23 +68,31 @@ const Projects = () => {
       <Work
         focusedProject={focusedProject}
         giveFocus={giveFocus}
+        data={data.aubonmarche}
+        focusOut={focusOut === 'aubonmarche'}
+        close={resetFocus}
+      >
+        <p>
+          I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
+          consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
+          Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra succulents
+          intelligentsia.
+        </p>
+      </Work>
+
+      <Work
+        focusedProject={focusedProject}
+        giveFocus={giveFocus}
         data={data.lola}
         focusOut={focusOut === 'lola'}
+        close={resetFocus}
       >
-        <Description
-          visible={focusedProject.lola}
-          title="Lola Buck's portfolio"
-          href="https://dev.lolabuck.com/"
-          close={resetFocus}
-          name="lola"
-        >
-          <p>
-            I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
-            consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
-            Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra
-            succulents intelligentsia.
-          </p>
-        </Description>
+        <p>
+          I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
+          consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
+          Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra succulents
+          intelligentsia.
+        </p>
       </Work>
 
       <Work
@@ -89,43 +100,14 @@ const Projects = () => {
         giveFocus={giveFocus}
         focusOut={focusOut === 'octopus'}
         data={data.octopus}
+        close={resetFocus}
       >
-        <Description
-          visible={focusedProject.octopus}
-          title="Octopus NGO's website"
-          href="http://octopus.cleobuck.com/"
-          close={resetFocus}
-          name="octopus"
-        >
-          <p>
-            I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
-            consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
-            Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra
-            succulents intelligentsia.
-          </p>
-        </Description>
-      </Work>
-
-      <Work
-        focusedProject={focusedProject}
-        giveFocus={giveFocus}
-        data={data.aubonmarche}
-        focusOut={focusOut === 'aubonmarche'}
-      >
-        <Description
-          visible={focusedProject.aubonmarche}
-          title="Au Bon Marche - A social shop"
-          href="https://aubonmarchelbv.pythonanywhere.com/"
-          close={resetFocus}
-          name="aubonmarche"
-        >
-          <p>
-            I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
-            consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
-            Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra
-            succulents intelligentsia.
-          </p>
-        </Description>
+        <p>
+          I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
+          consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
+          Sustainable church-key minim authentic, occaecat YOLO kickstarter pop-up neutra succulents
+          intelligentsia.
+        </p>
       </Work>
     </>
   );
