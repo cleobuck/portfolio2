@@ -98,14 +98,17 @@
       }
     }
     &.background {
+      display: none;
+
       z-index: 2;
       bottom: 0;
-      display: flex;
       justify-content: center;
       img {
         width: 70%;
       }
       @media #{$mq-min-pc} {
+        display: flex;
+
         width: 40vw;
         bottom: -50vh;
         left: 50%;
