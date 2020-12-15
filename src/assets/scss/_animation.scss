@@ -88,6 +88,7 @@
 }
 
 @mixin reverse-animation-mixin($name, $left, $bottom, $height) {
+  $tablet-name: $name + '-tablet';
   @keyframes #{$name} {
     from {
       left: 12vw;
@@ -104,9 +105,9 @@
 }
 
 @include animation-mixin(octopus, 75vw, 5vh, 70vh);
-@include animation-mixin(lola, 60vw, 30vh, 40vh);
+@include animation-mixin(lola, 65vw, 15vh, 70vh);
 @include animation-mixin(aubonmarche, 12vw, 5vh, 70vh);
 
 @include reverse-animation-mixin(octopusReverse, 75vw, 5vh, 70vh);
-@include reverse-animation-mixin(lolaReverse, 60vw, 30vh, 40vh);
+@include reverse-animation-mixin(lolaReverse, 65vw, 15vh, 70vh);
 @include reverse-animation-mixin(aubonmarcheReverse, 12vw, 5vh, 70vh);

@@ -1,8 +1,12 @@
-- mobile works page HALFWAY
- + change position of description 
+
 
 
  - tablet works
+  + change positions of images
+
+- change size of lola for mobile
+
+
 
 - create animations on all pages (check if lazy loading)
 - Arrange react image for works

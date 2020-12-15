@@ -47,7 +47,7 @@
       img {
         border-radius: 10px;
       }
-      box-shadow: -5px -5x 10px black;
+      box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
 
       @media #{$mq-min-tablet} {
         &.unfocused-mode {
@@ -77,12 +77,12 @@
 
     &.lola {
       @media #{$mq-min-tablet} {
-        height: 20vh;
+        height: 70vh;
       }
       @media #{$mq-min-pc} {
-        height: 40vh;
-        left: 60vw;
-        bottom: 40vh;
+        height: 70vh;
+        left: 65vw;
+        bottom: 15vh;
       }
     }
     &.octopus {
