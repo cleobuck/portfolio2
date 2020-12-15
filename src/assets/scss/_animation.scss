@@ -42,26 +42,28 @@
 
 // PROJECT ANIMATIONS
 
-.octopus-animate {
-  animation: octopus 2s forwards;
-}
-.lola-animate {
-  animation: lola 2s forwards;
-}
+@media #{$mq-min-tablet} {
+  .octopus-animate {
+    animation: octopus 2s forwards;
+  }
+  .lola-animate {
+    animation: lola 2s forwards;
+  }
 
-.aubonmarche-animate {
-  animation: aubonmarche 2s forwards;
-}
+  .aubonmarche-animate {
+    animation: aubonmarche 2s forwards;
+  }
 
-.octopus-animate-reverse {
-  animation: octopusReverse 2s forwards;
-}
-.lola-animate-reverse {
-  animation: lolaReverse 2s forwards;
-}
+  .octopus-animate-reverse {
+    animation: octopusReverse 2s forwards;
+  }
+  .lola-animate-reverse {
+    animation: lolaReverse 2s forwards;
+  }
 
-.aubonmarche-animate-reverse {
-  animation: aubonmarcheReverse 2s forwards;
+  .aubonmarche-animate-reverse {
+    animation: aubonmarcheReverse 2s forwards;
+  }
 }
 
 @mixin animation-mixin($name, $left, $bottom, $height) {

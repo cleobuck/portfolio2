@@ -30,7 +30,7 @@ export default function Work({ children, focusedProject, giveFocus, data, focusO
         </figure>
         <Description
           visible={focusedProject[data.name]}
-          title={data.title}
+          title={data.alt}
           href={data.href}
           close={close}
           name={data.name}
