@@ -70,41 +70,48 @@
     img {
       width: 100%;
       @media #{$mq-min-tablet} {
-        width: auto;
         height: 100%;
       }
     }
 
     &.lola {
       @media #{$mq-min-tablet} {
-        height: 70vh;
+        width: 30vw;
+        left: 50vw;
+        bottom: 20vh;
       }
       @media #{$mq-min-pc} {
         height: 70vh;
-        left: 65vw;
+        left: 68vw;
         bottom: 15vh;
+        width: auto;
       }
     }
     &.octopus {
       @media #{$mq-min-tablet} {
-        height: 40vh;
+        width: 30vw;
+        left: 65vw;
+        bottom: 10vh;
       }
       @media #{$mq-min-pc} {
         height: 70vh;
         left: 75vw;
         bottom: 5vh;
-
+        width: auto;
         overflow: hidden;
       }
     }
     &.aubonmarche {
       @media #{$mq-min-tablet} {
-        height: 40vh;
+        width: 30vw;
+        left: 5vw;
+        bottom: 10vh;
       }
       @media #{$mq-min-pc} {
         left: 12vw;
         bottom: 5vh;
         height: 70vh;
+        width: auto;
       }
     }
     &.background {
