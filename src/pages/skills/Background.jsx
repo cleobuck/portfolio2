@@ -4,7 +4,7 @@ import styles from './style.module.scss';
 
 import BackgroundImage from 'gatsby-background-image';
 
-const Background = ({ className, children, setLoad }) => {
+const Background = ({ children, setLoad }) => {
   const { desktop, medium, small } = useStaticQuery(
     graphql`
       query {

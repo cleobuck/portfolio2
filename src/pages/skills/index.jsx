@@ -9,7 +9,7 @@ import JSHTMLCSS from 'assets/images/js-html-css.svg';
 import SASS from 'assets/images/sass.svg';
 import Flask from 'assets/images/flask.svg';
 import react from 'assets/images/react.svg';
-import Skill from './Skill';
+import Skill from 'components/skill';
 
 import CleoKid from 'components/images/cleo-kid';
 

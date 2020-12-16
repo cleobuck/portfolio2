@@ -9,6 +9,25 @@
   @media #{$mq-min-pc} {
     height: 100vh;
   }
+  p {
+    color: white;
+    border-radius: 5px;
+    strong {
+      color: $stand-out-color;
+    }
+    background: $secondary-color;
+    width: 50%;
+
+    @media #{$mq-min-pc} {
+      width: 30%;
+    }
+    margin-left: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    padding: 20px;
+  }
 
   section.background {
     position: relative;
@@ -26,26 +45,6 @@
       @media #{$mq-min-pc} {
         background-position: top 50% left;
       }
-    }
-
-    p {
-      color: white;
-      border-radius: 5px;
-      strong {
-        color: $stand-out-color;
-      }
-      background: $secondary-color;
-      width: 50%;
-
-      @media #{$mq-min-pc} {
-        width: 30%;
-      }
-      margin-left: 10px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-
-      padding: 20px;
     }
 
     // SKILL SET TRIANGLE WHEN TABLET AND ABOVE
@@ -107,30 +106,7 @@
           @media #{$mq-min-pc} {
             width: 100vh;
           }
-
-          // background: rgba(234, 243, 245, 0.7);
         }
-      }
-    }
-
-    .individual-skill {
-      color: white;
-      width: 80px;
-      @media #{$mq-min-tablet} {
-        width: 75px;
-      }
-
-      padding: 5px;
-      margin-bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      img {
-        width: 100%;
-      }
-      figcaption {
-        text-align: center;
-        width: 100%;
       }
     }
 
