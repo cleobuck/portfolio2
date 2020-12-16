@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
-import Background from './Background';
+import Background from 'components/backgrounds/skills';
 import styles from './style.module.scss';
 
 import Python from 'assets/images/python.svg';
