@@ -51,6 +51,7 @@
     }
     p {
       color: white;
+      border-radius: 5px;
       strong {
         color: $stand-out-color;
       }
@@ -68,14 +69,14 @@
       padding: 20px;
     }
 
-    // SKILL SET TRIANGLE
-
+    // SKILL SET TRIANGLE WHEN TABLET AND ABOVE
     .skill-set {
       position: absolute;
       width: 100vw;
       bottom: 0;
       left: 0;
       height: 100vw;
+      z-index: 10000;
 
       @media #{$mq-min-pc} {
         height: 40vh;
@@ -84,50 +85,39 @@
         width: 80vh;
       }
 
-      .individual-skill {
-        color: white;
-        width: 75px;
-        padding: 5px;
-        margin-bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img {
-          width: 100%;
-        }
-        figcaption {
-          text-align: center;
-          width: 100%;
-        }
-      }
+      @media #{$mq-min-tablet} {
+        &:before {
+          // triangle
+          width: 0;
+          height: 0;
+          content: '';
+          position: absolute;
+          left: 0;
 
-      &:before {
-        // triangle
-        width: 0;
-        height: 0;
-        content: '';
-        position: absolute;
-        left: 0;
+          bottom: 0;
+          z-index: -1;
 
-        bottom: 0;
-        z-index: -1;
+          border-left: 50vw solid transparent;
+          border-right: 50vw solid transparent;
+          border-bottom: 100vw solid $primary-color;
 
-        border-left: 50vw solid transparent;
-        border-right: 50vw solid transparent;
-        border-bottom: 100vw solid $primary-color;
+          @media #{$mq-min-tablet} {
+            border-bottom: 100vw solid $primary-color;
+          }
 
-        @media #{$mq-min-pc} {
-          border-left: 50vh solid transparent;
-          border-right: 50vh solid transparent;
-          border-bottom: 80vh solid $primary-color;
+          @media #{$mq-min-pc} {
+            border-left: 50vh solid transparent;
+            border-right: 50vh solid transparent;
+            border-bottom: 80vh solid $primary-color;
 
-          left: auto;
-          right: 0;
+            left: auto;
+            right: 0;
+          }
         }
       }
 
       .skills-wrapper {
-        @media #{$mq-min-pc} {
+        @media #{$mq-min-tablet} {
           position: absolute;
 
           bottom: 0;
@@ -135,8 +125,33 @@
           width: 100vh;
           height: 80vh;
 
+          @media #{$mq-min-pc} {
+            width: 100vh;
+          }
+
           // background: rgba(234, 243, 245, 0.7);
         }
+      }
+    }
+
+    .individual-skill {
+      color: white;
+      width: 80px;
+      @media #{$mq-min-tablet} {
+        width: 75px;
+      }
+
+      padding: 5px;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+      figcaption {
+        text-align: center;
+        width: 100%;
       }
     }
 
@@ -145,35 +160,69 @@
     .skill-main {
       position: absolute;
       display: flex;
-      justify-content: space-around;
-      width: 100vw;
+      justify-content: center;
+      width: 100%;
+      $space-between: 5vw;
+
+      @media #{$mq-min-tablet} {
+        $space-between: 12vw;
+        @media #{$mq-min-pc} {
+          $space-between: 4vw;
+          width: 100vh;
+        }
+      }
+
       &.sub-skills {
-        padding: 0 10vw;
-        bottom: 0;
+        bottom: 5%;
+        figure {
+          &:first-child {
+            margin-right: calc(#{$space-between} * 2);
+          }
+          &:last-child {
+            margin-left: calc(#{$space-between} * 2);
+          }
+        }
       }
       &.frontend-skills {
-        bottom: 33.33333%;
-        padding: 0 25vw;
+        bottom: 40%;
+        figure {
+          &:first-child {
+            margin-right: $space-between;
+          }
+          &:last-child {
+            margin-left: $space-between;
+          }
+        }
       }
+
       &.skill-main {
-        bottom: 60.66666%;
+        bottom: 70%;
         justify-content: center;
       }
 
-      @media #{$mq-min-pc} {
-        width: 100vh;
+      @media #{$mq-min-tablet} {
+        width: 100vw;
         right: 0;
+        box-sizing: border-box;
         &.sub-skills {
-          padding: 0 10vh;
-          bottom: 5vh;
+          bottom: 10vh;
+          @media #{$mq-min-pc} {
+            bottom: 5vh;
+          }
         }
         &.frontend-skills {
           bottom: 30vh;
-          padding: 0 20vh;
+
+          @media #{$mq-min-pc} {
+            padding: 0 5vw;
+          }
         }
         &.skill-main {
           bottom: 50vh;
           justify-content: center;
+        }
+        @media #{$mq-min-pc} {
+          width: 100%;
         }
       }
     }

@@ -10,7 +10,7 @@ import SASS from 'assets/images/sass.svg';
 import Flask from 'assets/images/flask.svg';
 import react from 'assets/images/react.svg';
 import Skill from './Skill';
-import Reveal from 'react-reveal/Reveal';
+
 import CleoKid from './images/CleoKid';
 
 const Skills = () => {
@@ -19,13 +19,15 @@ const Skills = () => {
   return (
     <Background setLoad={() => setLoad(true)}>
       <CleoKid />
-      <p>
-        I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
-        realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing gets
-        my <strong>adrenaline </strong>
-        pumping as much as problem solving, especially with <strong>algorithms</strong>. Here are my
-        skills:
-      </p>
+      <Fade duration={2000}>
+        <p>
+          I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
+          realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing
+          gets my <strong>adrenaline </strong>
+          pumping as much as problem solving, especially with <strong>algorithms</strong>. Here are
+          my skills:
+        </p>
+      </Fade>
 
       <section className={styles.skillSet}>
         <div className={styles.skillsWrapper}>

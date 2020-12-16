@@ -15,6 +15,14 @@
     margin: 20px;
     padding: 10px;
 
+    @media #{$mq-min-tablet} {
+      padding-top: 75px;
+    }
+
+    @media #{$mq-min-pc} {
+      padding-top: 10px;
+    }
+
     &.hidden {
       @media #{$mq-min-pc} {
         display: none;

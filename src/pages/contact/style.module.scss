@@ -25,6 +25,7 @@
       bottom: 0;
       width: 100%;
       margin: 0;
+      margin-bottom: 50px;
     }
 
     text-align: center;
@@ -40,16 +41,26 @@
     bottom: 50vh;
 
     a {
+      height: 100%;
       display: flex;
       justify-content: center;
       img {
         height: 100%;
         margin: 0 auto;
       }
+      &:last-of-type {
+        height: 80%;
+        align-self: flex-end;
+      }
+      &:first-of-type {
+        height: 93%;
+        align-self: flex-end;
+      }
     }
 
     @media #{$mq-min-tablet} {
       position: static;
+      height: 30px;
 
       padding: 0 10vw;
       justify-content: space-between;

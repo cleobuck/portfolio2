@@ -5,6 +5,7 @@ import Lola from 'assets/images/lola.png';
 import Octopus from 'assets/images/octopus.jpg';
 import Aubonmarche from 'assets/images/aubonmarche.jpg';
 import background from 'assets/images/cleo-chair.png';
+import Fade from 'react-reveal/Fade';
 
 import Work from './Work';
 
@@ -60,7 +61,6 @@ const Projects = () => {
       <h3 className={Object.values(focusedProject).indexOf(true) !== -1 ? styles.hidden : ''}>
         And some of my projects...
       </h3>
-
       <figure className={styles.background}>
         <img src={background} alt="" />
       </figure>
