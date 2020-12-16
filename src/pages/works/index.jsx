@@ -6,7 +6,7 @@ import Octopus from 'assets/images/octopus.jpg';
 import Aubonmarche from 'assets/images/aubonmarche.jpg';
 import background from 'assets/images/cleo-chair.png';
 
-import Work from './Work';
+import Work from 'components/work';
 
 import { useResponsiveContext } from 'context';
 

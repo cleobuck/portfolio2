@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Description from './Description';
-import styles from './style.module.scss';
+import styles from 'pages/works/style.module.scss';
 
 export default function Work({ children, focusedProject, giveFocus, data, focusOut, close }) {
   const [inFocusMode, setInFocus] = useState(false);

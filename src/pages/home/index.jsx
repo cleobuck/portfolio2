@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
 
-import FullBackground from './FullBackground';
+import FullBackground from 'components/backgrounds/home';
 import styles from './style.module.scss';
 import eye from 'assets/images/eye.png';
 
