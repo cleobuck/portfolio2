@@ -5,7 +5,6 @@ import Lola from 'assets/images/lola.png';
 import Octopus from 'assets/images/octopus.jpg';
 import Aubonmarche from 'assets/images/aubonmarche.jpg';
 import background from 'assets/images/cleo-chair.png';
-import Fade from 'react-reveal/Fade';
 
 import Work from './Work';
 

@@ -11,7 +11,7 @@ import Flask from 'assets/images/flask.svg';
 import react from 'assets/images/react.svg';
 import Skill from './Skill';
 
-import CleoKid from './images/CleoKid';
+import CleoKid from 'components/images/cleo-kid';
 
 const Skills = () => {
   const [isLoaded, setLoad] = useState();
