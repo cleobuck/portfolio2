@@ -2,7 +2,8 @@
 
 .skills {
   // full height of background calculated according to width
-  height: calc(100vw * 2.051282051);
+  // height: calc(100vw * 2.051282051);
+  height: 100vh;
   width: 100%;
 
   @media #{$mq-min-pc} {
@@ -11,27 +12,42 @@
 
   section.background {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     &:after,
     &:before {
-      background-position: bottom left;
-      background-size: 100vw auto;
+      background-size: cover;
+      background-position: bottom right;
+
+      @media #{$mq-min-tablet} {
+        background-position: bottom 35% right;
+      }
       @media #{$mq-min-pc} {
         background-position: top 50% left;
-        background-size: cover;
       }
     }
     .cleoKid {
-      width: 100vw;
+      min-height: 100vh;
+      min-width: 100vw;
+      position: absolute !important;
+      bottom: 0;
+      right: 0;
+      img {
+        width: 100%;
+      }
+
+      @media #{$mq-min-tablet} {
+        min-height: 100vh;
+        min-width: 100vw;
+
+        bottom: 35%;
+        transform: translateY(35%);
+      }
       @media #{$mq-min-pc} {
         width: auto;
         height: 100vh;
       }
-      position: absolute;
-      top: 0;
-      left: 0;
     }
     p {
       color: white;

@@ -132,6 +132,7 @@
     color: white !important;
     text-decoration: none;
     cursor: pointer;
+    display: none;
     margin-right: 40px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -156,6 +157,10 @@
     height: 100vh;
 
     margin-top: 30px;
+
+    a {
+      display: inline-block;
+    }
 
     @media #{$mq-min-pc} {
       transform: translateX(2px);
