@@ -122,25 +122,25 @@
         width: auto;
       }
     }
-    &.background {
-      display: none;
-      z-index: 2;
-      bottom: 0;
+  }
+}
 
-      @media #{$mq-min-tablet} {
-        display: flex;
-        width: 40vw;
+div.background {
+  display: none;
+  z-index: 2;
+  bottom: 0;
+  position: absolute !important;
+  @media #{$mq-min-tablet} {
+    display: flex;
+    width: 40vw;
+    transform: translateX(-50%);
+    @media #{$mq-min-pc} {
+      transform: translate(-50%, 30%);
+    }
 
-        @media #{$mq-min-pc} {
-          bottom: -50vh;
-        }
-
-        left: 50%;
-        img {
-          width: 100%;
-        }
-        transform: translateX(-50%);
-      }
+    left: 50%;
+    img {
+      width: 100% !important;
     }
   }
 }

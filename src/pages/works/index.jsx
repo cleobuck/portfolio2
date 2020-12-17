@@ -9,6 +9,7 @@ import background from 'assets/images/cleo-chair.png';
 import Work from 'components/work';
 
 import { useResponsiveContext } from 'context';
+import CleoChair from '../../components/images/cleo-chair';
 
 const Projects = () => {
   const [focusedProject, setFocus] = useState({ lola: false, octopus: false, aubonmarche: false });
@@ -60,9 +61,7 @@ const Projects = () => {
       <h3 className={Object.values(focusedProject).indexOf(true) !== -1 ? styles.hidden : ''}>
         And some of my projects...
       </h3>
-      <figure className={styles.background}>
-        <img src={background} alt="" />
-      </figure>
+      <CleoChair className={styles.background} />
 
       <Work
         focusedProject={focusedProject}
