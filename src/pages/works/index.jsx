@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './style.module.scss';
 
-import Lola from 'assets/images/lola.png';
+import Lola from 'assets/images/lola.jpg';
 import Octopus from 'assets/images/octopus.jpg';
 import Aubonmarche from 'assets/images/aubonmarche.jpg';
 import background from 'assets/images/cleo-chair.png';

@@ -18,7 +18,7 @@ const Skills = () => {
 
   return (
     <Background setLoad={() => setLoad(true)}>
-      <CleoKid />
+      {isLoaded && <CleoKid />}
       <Fade duration={2000}>
         <p>
           I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I

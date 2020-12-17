@@ -1,9 +1,18 @@
 
 
 
-- correct skills page
-- create animations on all pages (check if lazy loading)
-- Arrange react image for works
+- Arrange react image for works background and objects
+- make sure every image is well rendered for each format
 - create texts for projects
 - build + go through lighthouse (accessible, SEO, etc)
+
+   + correct accessibility
+   + correct SEO
+   + correct performance
+
+- test through lambdatest
+- correct skills triangle
+- get lola online
+- contact octopus
+- correct images with photopea: eye + hand
 - deploy

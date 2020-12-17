@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Img from 'gatsby-image';
+
 import Fade from 'react-reveal/Fade';
-import Reveal from 'react-reveal/Reveal';
 
 import FullBackground from 'components/backgrounds/home';
 import styles from './style.module.scss';
@@ -12,9 +11,11 @@ const Header = () => {
 
   return (
     <FullBackground setLoad={() => setLoad(true)}>
-      <Fade duration={1500} delay={3000} distance="0px">
-        <img src={eye} alt="" className={styles.eye} />
-      </Fade>
+      {isLoaded && (
+        <Fade duration={1500} delay={3000} distance="0px">
+          <img src={eye} alt="" className={styles.eye} />
+        </Fade>
+      )}
 
       <div className={styles.content}>
         <div className={styles.titleAndSlogan}>

@@ -9,7 +9,7 @@ export default function Description({ visible, title, children, href, close, nam
         <img src={CloseIcon} aria-label="close" alt="" onClick={() => close(name)} />
       </button>
       <h4> {title} </h4> {children}
-      <a href={href} target="_blank">
+      <a href={href} rel="noopener" target="_blank">
         View project
       </a>
     </div>
