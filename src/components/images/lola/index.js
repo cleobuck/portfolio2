@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
-export default () => {
+export default ({ className }) => {
   const { desktop, small } = useStaticQuery(
     graphql`
       query {
@@ -32,5 +32,5 @@ export default () => {
     },
   ];
 
-  return <Img fluid={sources} alt={"Lola Buck's portfolio"} />;
+  return <Img fluid={sources} alt={"Lola Buck's portfolio"} className={className} />;
 };

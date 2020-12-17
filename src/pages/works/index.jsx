@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './style.module.scss';
 
-import Lola from 'assets/images/lola.jpg';
-import Octopus from 'assets/images/octopus.jpg';
-import Aubonmarche from 'assets/images/aubonmarche.jpg';
-import background from 'assets/images/cleo-chair.png';
+import Lola from 'components/images/lola';
+import Octopus from 'components/images/octopus';
+import Aubonmarche from 'components/images/aubonmarche';
 
 import Work from 'components/work';
 

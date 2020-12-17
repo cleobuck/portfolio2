@@ -37,41 +37,41 @@
       position: static;
     }
   }
-  figure {
+  .aubonmarche,
+  .lola,
+  .octopus {
     width: 70vw;
     margin: 20px auto;
     @media #{$mq-min-tablet} {
-      position: absolute;
+      position: absolute !important;
       width: auto;
       z-index: 1;
     }
 
-    &:not(.background) {
-      transition: 0.5s all;
-      @media #{$mq-min-tablet} {
-        transition: 1s all;
-      }
-      cursor: pointer;
-      img {
-        border-radius: 10px;
-      }
-      box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
+    transition: 0.5s all;
+    @media #{$mq-min-tablet} {
+      transition: 1s all;
+    }
+    cursor: pointer;
+    img {
+      border-radius: 10px;
+    }
+    box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
 
-      @media #{$mq-min-tablet} {
-        &.unfocused-mode {
-          &:hover {
-            transform: scale(1.1);
-            z-index: 100000;
-            perspective-origin: 10px 10px;
-          }
+    @media #{$mq-min-tablet} {
+      &.unfocused-mode {
+        &:hover {
+          transform: scale(1.1);
+          z-index: 100000;
+          perspective-origin: 10px 10px;
         }
       }
+    }
 
-      &.discard {
-        @media #{$mq-min-tablet} {
-          transform: perspective(300px) translate3D(-100%, -100%, -2000px);
-          opacity: 0;
-        }
+    &.discard {
+      @media #{$mq-min-tablet} {
+        transform: perspective(300px) translate3D(-100%, -100%, -2000px);
+        opacity: 0;
       }
     }
 

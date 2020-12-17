@@ -16,7 +16,7 @@ export default function Work({ children, focusedProject, giveFocus, data, focusO
   return (
     <>
       <article>
-        <figure
+        <data.src
           className={`${styles[data.name]} ${
             inFocusMode
               ? toDiscard
@@ -25,9 +25,7 @@ export default function Work({ children, focusedProject, giveFocus, data, focusO
               : styles.unfocusedMode
           } ${focusOut ? data.name + '-animate-reverse' : ''}`}
           onClick={() => giveFocus(data.name)}
-        >
-          <img src={data.src} alt={data.alt} />
-        </figure>
+        />
         <Description
           visible={focusedProject[data.name]}
           title={data.alt}
