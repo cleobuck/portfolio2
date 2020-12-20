@@ -146,6 +146,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 0;
     height: 40vh;
     width: 100vw;
     display: flex;
@@ -166,6 +167,7 @@
 
     .introduction {
       width: 60vw;
+
       @media #{$mq-min-pc} {
         width: 100%;
       }

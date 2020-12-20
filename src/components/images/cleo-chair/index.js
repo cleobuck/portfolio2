@@ -3,17 +3,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 export default ({ className }) => {
-  const { desktop, small } = useStaticQuery(
+  const { image } = useStaticQuery(
     graphql`
       query {
-        small: file(relativePath: { eq: "cleo-chair.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        desktop: file(relativePath: { eq: "cleo-chair.png" }) {
+        image: file(relativePath: { eq: "cleo-chair.png" }) {
           childImageSharp {
             fluid(maxWidth: 2000, quality: 100) {
               ...GatsbyImageSharpFluid
@@ -24,13 +17,5 @@ export default ({ className }) => {
     `
   );
 
-  const sources = [
-    small.childImageSharp.fluid,
-    {
-      ...desktop.childImageSharp.fluid,
-      media: `(min-width: 1024px)`,
-    },
-  ];
-
-  return <Img fluid={sources} className={className} />;
+  return <Img fluid={image.childImageSharp.fluid} className={className} />;
 };
