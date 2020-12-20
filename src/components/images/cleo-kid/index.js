@@ -4,10 +4,17 @@ import Img from 'gatsby-image';
 import styles from './style.module.scss';
 
 export default () => {
-  const { image } = useStaticQuery(
+  const { desktop, small } = useStaticQuery(
     graphql`
       query {
-        image: file(relativePath: { eq: "skills/cleo-kid.png" }) {
+        small: file(relativePath: { eq: "skills/cleo-kid.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1000, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        desktop: file(relativePath: { eq: "skills/cleo-kid-desktop.png" }) {
           childImageSharp {
             fluid(maxWidth: 2000, quality: 100) {
               ...GatsbyImageSharpFluid
@@ -18,5 +25,13 @@ export default () => {
     `
   );
 
-  return <Img fluid={image.childImageSharp.fluid} className={styles.cleoKid} />;
+  const sources = [
+    small.childImageSharp.fluid,
+    {
+      ...desktop.childImageSharp.fluid,
+      media: `(min-width: 1024px)`,
+    },
+  ];
+
+  return <Img fluid={sources} className={styles.cleoKid} />;
 };

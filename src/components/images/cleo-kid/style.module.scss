@@ -18,7 +18,8 @@
     transform: translateY(35%);
   }
   @media #{$mq-min-pc} {
-    width: auto;
-    height: 100vh;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
   }
 }
