@@ -48,3 +48,26 @@ $mq-min-xx: '(min-width: #{$bp-xx})';
 
 $mq-max-xxx: widthOffset($bp-xxx);
 $mq-min-xxx: '(min-width: #{$bp-xxx})';
+
+// Works sizes and positions
+
+$lola: (
+  'left': 50vw,
+  'bottom': 20vh,
+  'left-pc': 50vw,
+  'bottom-pc': 20vh,
+);
+
+$octopus: (
+  'left': 65vw,
+  'bottom': 10vh,
+  'left-pc': 65vw,
+  'bottom-pc': 10vh,
+);
+
+$aubonmarche: (
+  'left': 5vw,
+  'bottom': 10vh,
+  'left-pc': 5vw,
+  'bottom-pc': 1vh,
+);

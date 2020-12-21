@@ -29,36 +29,37 @@
       }
     }
   }
-  article {
-    width: 70vw;
-    margin: 0 auto;
-    position: relative;
-    @media #{$mq-min-tablet} {
-      position: static;
-    }
+}
+
+// ----------------------------- article ---------------------------------- //
+article {
+  width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  @media #{$mq-min-tablet} {
+    width: auto;
+    position: static;
   }
+
+  // general
+
   .aubonmarche,
   .lola,
   .octopus {
     width: 70vw;
     margin: 20px auto;
-    @media #{$mq-min-tablet} {
-      position: absolute !important;
-      width: auto;
-      z-index: 1;
-    }
-
     transition: 0.5s all;
-    @media #{$mq-min-tablet} {
-      transition: 1s all;
-    }
     cursor: pointer;
-    img {
-      border-radius: 10px;
-    }
     box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
 
     @media #{$mq-min-tablet} {
+      position: absolute !important;
+      width: 30vw;
+      @media #{$mq-min-pc} {
+        width: 20vw;
+      }
+      z-index: 3;
+      transition: 1s all;
       &.unfocused-mode {
         &:hover {
           transform: scale(1.1);
@@ -67,6 +68,9 @@
         }
       }
     }
+    img {
+      border-radius: 10px;
+    }
 
     &.discard {
       @media #{$mq-min-tablet} {
@@ -74,56 +78,43 @@
         opacity: 0;
       }
     }
+  }
 
-    img {
-      width: 100%;
-      @media #{$mq-min-tablet} {
-        height: 100%;
-      }
-    }
+  // individual size and positioning
 
-    &.lola {
-      @media #{$mq-min-tablet} {
-        width: 30vw;
-        left: 50vw;
-        bottom: 20vh;
-      }
-      @media #{$mq-min-pc} {
-        height: 70vh;
-        left: 68vw;
-        bottom: 15vh;
-        width: auto;
-      }
+  .lola {
+    @media #{$mq-min-tablet} {
+      left: map-get($lola, 'left');
+      bottom: map-get($lola, 'bottom');
     }
-    &.octopus {
-      @media #{$mq-min-tablet} {
-        width: 30vw;
-        left: 65vw;
-        bottom: 10vh;
-      }
-      @media #{$mq-min-pc} {
-        height: 70vh;
-        left: 75vw;
-        bottom: 5vh;
-        width: auto;
-        overflow: hidden;
-      }
+    @media #{$mq-min-pc} {
+      left: map-get($lola, 'left-pc');
+      bottom: map-get($lola, 'bottom-pc');
     }
-    &.aubonmarche {
-      @media #{$mq-min-tablet} {
-        width: 30vw;
-        left: 5vw;
-        bottom: 10vh;
-      }
-      @media #{$mq-min-pc} {
-        left: 12vw;
-        bottom: 5vh;
-        height: 70vh;
-        width: auto;
-      }
+  }
+  .octopus {
+    @media #{$mq-min-tablet} {
+      left: map-get($octopus, 'left');
+      bottom: map-get($octopus, 'bottom');
+    }
+    @media #{$mq-min-pc} {
+      left: map-get($octopus, 'left-pc');
+      bottom: map-get($octopus, 'bottom-pc');
+    }
+  }
+  .aubonmarche {
+    @media #{$mq-min-tablet} {
+      left: map-get($aubonmarche, 'left');
+      bottom: map-get($aubonmarche, 'bottom');
+    }
+    @media #{$mq-min-pc} {
+      left: map-get($aubonmarche, 'left-pc');
+      bottom: map-get($aubonmarche, 'bottom-pc');
     }
   }
 }
+
+// ----------------------------- background ---------------------------------- //
 
 div.background {
   display: none;
@@ -145,7 +136,7 @@ div.background {
   }
 }
 
-// description
+// ----------------------------- description ---------------------------------- //
 
 .description {
   position: absolute;
