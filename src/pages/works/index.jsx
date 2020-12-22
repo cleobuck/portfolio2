@@ -11,7 +11,7 @@ import { useResponsiveContext } from 'context';
 import CleoChair from '../../components/images/cleo-chair';
 
 const Projects = () => {
-  const [focusedProject, setFocus] = useState();
+  const [focusedProject, setFocus] = useState(false);
   const [focusOut, setFocusOut] = useState('');
   const { state } = useResponsiveContext();
   const giveFocus = (focus) => {
@@ -26,7 +26,7 @@ const Projects = () => {
       setFocusOut('');
     }
 
-    setFocus({ lola: false, octopus: false, aubonmarche: false });
+    setFocus(false);
   };
 
   useEffect(() => {
