@@ -2,33 +2,26 @@ import React, { useState, useEffect } from 'react';
 import Description from './Description';
 import styles from 'pages/works/style.module.scss';
 
-export default function Work({ children, focusedProject, giveFocus, data, focusOut, close }) {
-  const [inFocusMode, setInFocus] = useState(false);
-
-  const [toDiscard, setDiscard] = useState(false);
-
-  useEffect(() => {
-    setInFocus(Object.values(focusedProject).indexOf(true) !== -1);
-
-    setDiscard(focusedProject[data.name] === false || focusedProject[data.name] === undefined);
-  }, [focusedProject]);
-
+export default function Work({ children, giveFocus, noneFocused, data, focusOut, close }) {
   return (
     <>
       <figure
         className={`${styles[data.name]} ${
-          inFocusMode ? (toDiscard ? styles.discard : data.name + '-animate') : styles.unfocusedMode
+          !noneFocused
+            ? !data.focused
+              ? styles.discard
+              : data.name + '-animate'
+            : styles.unfocusedMode
         } ${focusOut ? data.name + '-animate-reverse' : ''}`}
-        // onClick={() => giveFocus(data.name)}
       >
         <data.src />
         <Description
-          visible={focusedProject[data.name]}
+          visible={data.focused}
           title={data.alt}
           href={data.href}
           close={close}
           name={data.name}
-          onClick={() => giveFocus(data.name)}
+          onClick={() => giveFocus(data.focused ? false : data.name)}
         >
           {' '}
           {children}
