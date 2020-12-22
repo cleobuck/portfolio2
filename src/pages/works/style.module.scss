@@ -219,6 +219,7 @@ div.background {
 
     @media #{$mq-min-tablet} {
       float: right;
+      display: block;
     }
 
     img {

@@ -14,6 +14,9 @@ export default function Description({ visible, title, children, href, setRef, on
       onClick={onClick}
       className={`${styles.description} ${visible ? styles.visible : ''} `}
     >
+      <button className={styles.close}>
+        <img src={CloseIcon} alt="" />
+      </button>
       <h4> {title} </h4> {children}
       <a
         ref={ref}
