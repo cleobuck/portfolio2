@@ -15,28 +15,25 @@ export default function Work({ children, focusedProject, giveFocus, data, focusO
 
   return (
     <>
-      <article>
-        <data.src
-          className={`${styles[data.name]} ${
-            inFocusMode
-              ? toDiscard
-                ? styles.discard
-                : data.name + '-animate'
-              : styles.unfocusedMode
-          } ${focusOut ? data.name + '-animate-reverse' : ''}`}
-          onClick={() => giveFocus(data.name)}
-        />
+      <figure
+        className={`${styles[data.name]} ${
+          inFocusMode ? (toDiscard ? styles.discard : data.name + '-animate') : styles.unfocusedMode
+        } ${focusOut ? data.name + '-animate-reverse' : ''}`}
+        // onClick={() => giveFocus(data.name)}
+      >
+        <data.src />
         <Description
           visible={focusedProject[data.name]}
           title={data.alt}
           href={data.href}
           close={close}
           name={data.name}
+          onClick={() => giveFocus(data.name)}
         >
           {' '}
           {children}
         </Description>
-      </article>
+      </figure>
     </>
   );
 }

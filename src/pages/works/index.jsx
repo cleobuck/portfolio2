@@ -15,7 +15,9 @@ const Projects = () => {
   const [focusOut, setFocusOut] = useState('');
   const { state } = useResponsiveContext();
   const giveFocus = (focus) => {
-    setFocus({ [focus]: true });
+    setFocus((focusedProject) => ({
+      [focus]: !focusedProject[focus],
+    }));
   };
 
   const resetFocus = (currentFocus = false) => {

@@ -32,85 +32,74 @@
 }
 
 // ----------------------------- article ---------------------------------- //
-article {
+
+.aubonmarche,
+.lola,
+.octopus {
   width: 70vw;
-  margin: 0 auto;
+  margin: 20px auto;
+  transition: 0.5s all;
+  cursor: pointer;
+  box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
   position: relative;
+
   @media #{$mq-min-tablet} {
-    width: auto;
-    position: static;
-  }
-
-  // general
-
-  .aubonmarche,
-  .lola,
-  .octopus {
-    width: 70vw;
-    margin: 20px auto;
-    transition: 0.5s all;
-    cursor: pointer;
-    box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
-
-    @media #{$mq-min-tablet} {
-      position: absolute !important;
-      width: 30vw;
-      @media #{$mq-min-pc} {
-        width: 20vw;
-      }
-      z-index: 3;
-      transition: 1s all;
-      &.unfocused-mode {
-        &:hover {
-          transform: scale(1.1);
-          z-index: 100000;
-          perspective-origin: 10px 10px;
-        }
-      }
+    position: absolute;
+    width: 30vw;
+    @media #{$mq-min-pc} {
+      width: 20vw;
     }
-    img {
-      border-radius: 10px;
-    }
-
-    &.discard {
-      @media #{$mq-min-tablet} {
-        transform: perspective(300px) translate3D(-100%, -100%, -2000px);
-        opacity: 0;
+    transition: 1s all;
+    &.unfocused-mode {
+      &:hover {
+        transform: scale(1.1);
+        z-index: 100000;
+        perspective-origin: 10px 10px;
       }
     }
   }
+  img {
+    border-radius: 10px;
+  }
 
-  // individual size and positioning
-
-  .lola {
+  &.discard {
     @media #{$mq-min-tablet} {
-      left: map-get($lola, 'left');
-      bottom: map-get($lola, 'bottom');
-    }
-    @media #{$mq-min-pc} {
-      left: map-get($lola, 'left-pc');
-      bottom: map-get($lola, 'bottom-pc');
+      transform: perspective(300px) translate3D(-100%, -100%, -2000px);
+      opacity: 0;
     }
   }
-  .octopus {
-    @media #{$mq-min-tablet} {
-      left: map-get($octopus, 'left');
-      bottom: map-get($octopus, 'bottom');
-    }
-    @media #{$mq-min-pc} {
-      left: map-get($octopus, 'left-pc');
-      bottom: map-get($octopus, 'bottom-pc');
-    }
+}
+
+// individual size and positioning
+
+.lola {
+  @media #{$mq-min-tablet} {
+    left: map-get($lola, 'left');
+    bottom: map-get($lola, 'bottom');
   }
-  .aubonmarche {
-    @media #{$mq-min-tablet} {
-      left: map-get($aubonmarche, 'left');
-      bottom: map-get($aubonmarche, 'bottom');
-    }
-    @media #{$mq-min-pc} {
-      left: map-get($aubonmarche, 'left-pc');
-      bottom: map-get($aubonmarche, 'bottom-pc');
-    }
+  @media #{$mq-min-pc} {
+    left: map-get($lola, 'left-pc');
+    bottom: map-get($lola, 'bottom-pc');
+  }
+}
+.octopus {
+  @media #{$mq-min-tablet} {
+    left: map-get($octopus, 'left');
+    bottom: map-get($octopus, 'bottom');
+  }
+  @media #{$mq-min-pc} {
+    left: map-get($octopus, 'left-pc');
+    bottom: map-get($octopus, 'bottom-pc');
+  }
+}
+.aubonmarche {
+  @media #{$mq-min-tablet} {
+    left: map-get($aubonmarche, 'left');
+    bottom: map-get($aubonmarche, 'bottom');
+  }
+  @media #{$mq-min-pc} {
+    left: map-get($aubonmarche, 'left-pc');
+    bottom: map-get($aubonmarche, 'bottom-pc');
   }
 }
 
@@ -140,7 +129,8 @@ div.background {
 
 .description {
   position: absolute;
-  right: -10000px;
+  top: 0;
+  right: 0;
   opacity: 0;
   transition: 1s opacity;
   width: 100%;
@@ -150,9 +140,10 @@ div.background {
   background: transparentize($secondary-color, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @media #{$mq-min-tablet} {
+    right: -10000px;
     display: block;
     transition: 2s opacity 1s;
     width: 40vw;
@@ -187,7 +178,7 @@ div.background {
       text-align: left;
     }
   }
-  a {
+  a.project-link {
     margin: 0 auto;
     display: block;
     width: 80%;
@@ -220,9 +211,9 @@ div.background {
 
     background: transparent;
     border: none;
-    display: flex;
-    align-items: center;
+
     margin: 0 auto;
+    display: none;
 
     @media #{$mq-min-tablet} {
       float: right;
