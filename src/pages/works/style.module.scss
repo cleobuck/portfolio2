@@ -108,6 +108,7 @@
 div.background {
   display: none;
   z-index: 2;
+
   bottom: 0;
   position: absolute !important;
   @media #{$mq-min-tablet} {
@@ -132,7 +133,7 @@ div.background {
   top: 0;
   right: 0;
   opacity: 0;
-  transition: 1s opacity;
+
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -143,9 +144,8 @@ div.background {
   justify-content: space-around;
 
   @media #{$mq-min-tablet} {
-    right: -10000px;
     display: block;
-    transition: 2s opacity 1s;
+    transition: none;
     width: 40vw;
     height: auto;
     background: $secondary-color;
@@ -156,12 +156,14 @@ div.background {
 
   &.visible {
     opacity: 1;
+    transition: 1s opacity;
     top: 0;
     right: 0;
     @media #{$mq-min-tablet} {
+      transition: 2s opacity 1.9s;
       padding: 20px;
-      right: 20px;
-      top: 40vh;
+      left: 50vw;
+      top: 5vh;
     }
 
     @media #{$mq-min-pc} {

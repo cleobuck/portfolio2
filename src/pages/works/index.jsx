@@ -12,26 +12,12 @@ import CleoChair from '../../components/images/cleo-chair';
 
 const Projects = () => {
   const [focusedProject, setFocus] = useState(false);
-  const [focusOut, setFocusOut] = useState('');
+
   const { state } = useResponsiveContext();
-  const giveFocus = (focus) => {
-    setFocus(focus);
-  };
-
-  const resetFocus = (currentFocus = false) => {
-    if (currentFocus) {
-      setFocusOut(currentFocus);
-      setTimeout(() => setFocusOut(''), 2000);
-    } else {
-      setFocusOut('');
-    }
-
-    setFocus(false);
-  };
 
   useEffect(() => {
-    resetFocus();
-    setFocusOut();
+    // resets focus to false when clicking on new page
+    setFocus(false);
   }, [state]);
 
   const data = {
@@ -66,8 +52,6 @@ const Projects = () => {
       <Work
         giveFocus={(focus) => setFocus(focus)}
         data={data.aubonmarche}
-        focusOut={focusOut === 'aubonmarche'}
-        close={resetFocus}
         noneFocused={!focusedProject}
       >
         <p>
@@ -78,13 +62,7 @@ const Projects = () => {
         </p>
       </Work>
 
-      <Work
-        giveFocus={giveFocus}
-        data={data.lola}
-        focusOut={focusOut === 'lola'}
-        close={resetFocus}
-        noneFocused={!focusedProject}
-      >
+      <Work giveFocus={(focus) => setFocus(focus)} data={data.lola} noneFocused={!focusedProject}>
         <p>
           I'm baby copper mug fugiat cardigan deserunt ipsum literally, waistcoat in. Dolore kogi
           consectetur, helvetica single-origin coffee actually selfies kinfolk dreamcatcher.
@@ -94,10 +72,8 @@ const Projects = () => {
       </Work>
 
       <Work
-        giveFocus={giveFocus}
-        focusOut={focusOut === 'octopus'}
+        giveFocus={(focus) => setFocus(focus)}
         data={data.octopus}
-        close={resetFocus}
         noneFocused={!focusedProject}
       >
         <p>
