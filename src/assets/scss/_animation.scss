@@ -102,7 +102,7 @@
     100% {
       left: 12vw;
       bottom: 5vh;
-      z-index: 0;
+      z-index: 5;
       height: 80vh;
     }
   }
@@ -132,10 +132,16 @@
 
       width: 30vw;
     }
-    100% {
+    95% {
       left: 2vw;
       bottom: 10vh;
       z-index: 0;
+      width: 40vw;
+    }
+    100% {
+      z-index: 5;
+      left: 2vw;
+      bottom: 10vh;
       width: 40vw;
     }
   }
