@@ -51,6 +51,8 @@
     }
     transition: 1s all;
     &.unfocused-mode {
+      transition: transform 2s ease-out, opacity 0.5s linear;
+      transform: translateZ(0);
       &:hover {
         transform: scale(1.1);
         z-index: 100000;
@@ -65,6 +67,7 @@
   &.discard {
     @media #{$mq-min-tablet} {
       transform: perspective(300px) translate3D(-100%, -100%, -2000px);
+      webkit-transform: perspective(300px) translate3D(-100%, -100%, -2000px);
       opacity: 0;
     }
   }
