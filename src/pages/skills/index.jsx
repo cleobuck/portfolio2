@@ -18,35 +18,40 @@ const Skills = () => {
 
   return (
     <Background setLoad={() => setLoad(true)}>
-      {isLoaded && <CleoKid />}
-      <Fade duration={2000}>
-        <p>
-          I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
-          realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing
-          gets my <strong>adrenaline </strong>
-          pumping as much as problem solving, especially with <strong>algorithms</strong>. Here are
-          my skills:
-        </p>
-      </Fade>
+      <CleoKid />
 
-      <section className={styles.skillSet}>
-        <div className={styles.skillsWrapper}>
-          <div className={styles.skillMain}>
-            <Skill image={react} title="React" visible={true} />
-          </div>
+      {isLoaded && (
+        <>
+          <Fade duration={2000}>
+            <p>
+              I used to travel a LOT in <strong>search </strong> of what fuelled me. Eventually, I
+              realized what I <strong>intuitively</strong> knew as a <strong>kid </strong> : Nothing
+              gets my <strong>adrenaline </strong>
+              pumping as much as problem solving, especially with <strong>algorithms</strong>. Here
+              are my skills:
+            </p>
+          </Fade>
 
-          <div className={styles.frontendSkills}>
-            <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
-            <Skill image={SASS} title="SASS" visible={false} />
-          </div>
+          <section className={styles.skillSet}>
+            <div className={styles.skillsWrapper}>
+              <div className={styles.skillMain}>
+                <Skill image={react} title="React" visible={true} />
+              </div>
 
-          <div className={styles.subSkills}>
-            <Skill image={Wordpress} title="Wordpress" visible={true} />
-            <Skill image={Python} title="Python" visible={true} />
-            <Skill image={Flask} title="Flask" visible={true} />
-          </div>
-        </div>
-      </section>
+              <div className={styles.frontendSkills}>
+                <Skill image={JSHTMLCSS} title="Js, HTML, and CSS" visible={false} />
+                <Skill image={SASS} title="SASS" visible={false} />
+              </div>
+
+              <div className={styles.subSkills}>
+                <Skill image={Wordpress} title="Wordpress" visible={true} />
+                <Skill image={Python} title="Python" visible={true} />
+                <Skill image={Flask} title="Flask" visible={true} />
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </Background>
   );
 };

@@ -10,14 +10,14 @@ export default () => {
         small: file(relativePath: { eq: "skills/cleo-kid.png" }) {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
         desktop: file(relativePath: { eq: "skills/cleo-kid-desktop.png" }) {
           childImageSharp {
             fluid(maxWidth: 2000, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
