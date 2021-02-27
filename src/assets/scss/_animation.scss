@@ -43,44 +43,102 @@
 // PROJECT ANIMATIONS
 
 @media #{$mq-min-tablet} {
+  .octopus-animate,
+  .lola-animate,
+  .aubonmarche-animate {
+    figure.wrapper-anim {
+      animation: 0.5s sizeanimTablet 0.5s forwards;
+      @media #{$mq-min-pc} {
+        animation: 0.5s sizeanim 0.5s forwards;
+      }
+    }
+  }
+
+  .octopus-animate-reverse,
+  .lola-animate-reverse,
+  .aubonmarche-animate-reverse {
+    figure.wrapper-anim {
+      animation: reversesizeanimTablet 0.5s forwards;
+      @media #{$mq-min-pc} {
+        animation: reversesizeanim 0.5s forwards;
+      }
+    }
+  }
   .octopus-animate {
-    animation: octopusTablet 2s forwards;
+    animation: octopusTablet 1s forwards;
+
     @media #{$mq-min-pc} {
-      animation: octopus 2s forwards;
+      animation: octopus 1s forwards;
     }
   }
   .lola-animate {
-    animation: lolaTablet 2s forwards;
+    animation: lolaTablet 1s forwards;
     @media #{$mq-min-pc} {
-      animation: lola 2s forwards;
+      animation: lola 1s forwards;
     }
   }
 
   .aubonmarche-animate {
-    animation: aubonmarcheTablet 2s forwards;
+    animation: aubonmarcheTablet 1s forwards;
     @media #{$mq-min-pc} {
-      animation: aubonmarche 2s forwards;
+      animation: aubonmarche 1s forwards;
     }
   }
 
   .octopus-animate-reverse {
-    animation: octopusTabletReverse 2s forwards;
+    animation: octopusTabletReverse 1s forwards;
     @media #{$mq-min-pc} {
-      animation: octopusReverse 2s forwards;
+      animation: octopusReverse 1s forwards;
     }
   }
   .lola-animate-reverse {
-    animation: lolaTabletReverse 2s forwards;
+    animation: lolaTabletReverse 1s forwards;
     @media #{$mq-min-pc} {
-      animation: lolaReverse 2s forwards;
+      animation: lolaReverse 1s forwards;
     }
   }
 
   .aubonmarche-animate-reverse {
-    animation: aubonmarcheTabletReverse 2s forwards;
+    animation: aubonmarcheTabletReverse 1s forwards;
     @media #{$mq-min-pc} {
-      animation: aubonmarcheReverse 2s forwards;
+      animation: aubonmarcheReverse 1s forwards;
     }
+  }
+}
+
+@keyframes sizeanim {
+  0% {
+    height: $startProjectHeight;
+  }
+  100% {
+    height: 70vh;
+  }
+}
+
+@keyframes sizeanimTablet {
+  0% {
+    height: $startProjectHeightTablet;
+  }
+  100% {
+    height: 39vh;
+  }
+}
+
+@keyframes reversesizeanim {
+  0% {
+    height: 70vh;
+  }
+  100% {
+    height: $startProjectHeight;
+  }
+}
+
+@keyframes reversesizeanimTablet {
+  0% {
+    height: 39vh;
+  }
+  100% {
+    height: $startProjectHeightTablet;
   }
 }
 
@@ -88,36 +146,29 @@
   $reverse: $name + 'Reverse';
   $tablet: $name + 'Tablet';
   $tabletReverse: $name + 'TabletReverse';
+  $anim: $name + '-width';
+
   @keyframes #{$name} {
     0% {
-      z-index: 0;
+      z-index: 5;
     }
 
-    20% {
-      left: $left;
-      bottom: $bottom;
-
-      height: 70vh;
-    }
     100% {
       left: 12vw;
-      bottom: 5vh;
+      bottom: 10vh;
       z-index: 5;
-      height: 80vh;
     }
   }
 
   @keyframes #{$reverse} {
     from {
       left: 12vw;
-      bottom: 5vh;
-      z-index: 0;
-      height: 80vh;
+      bottom: 10vh;
     }
     to {
       left: $left;
       bottom: $bottom;
-      height: 70vh;
+      z-index: 0;
     }
   }
 
@@ -129,20 +180,14 @@
     20% {
       left: $tabletLeft;
       bottom: $tabletBottom;
-
-      width: 30vw;
     }
     95% {
-      left: 2vw;
-      bottom: 10vh;
       z-index: 0;
-      width: 40vw;
     }
     100% {
       z-index: 5;
       left: 2vw;
       bottom: 10vh;
-      width: 40vw;
     }
   }
 
@@ -151,16 +196,35 @@
       left: 12vw;
       bottom: 5vh;
       z-index: 0;
-      width: 40vw;
     }
     to {
       left: $tabletLeft;
       bottom: $tabletBottom;
-      width: 30vw;
     }
   }
 }
 
-@include animation-mixin(octopus, 75vw, 5vh, 65vw, 10vh);
-@include animation-mixin(lola, 65vw, 15vh, 50vw, 20vh);
-@include animation-mixin(aubonmarche, 12vw, 5vh, 5vw, 10vh);
+// $name, $left, $bottom, $tabletLeft, $tabletBottom
+@include animation-mixin(
+  octopus,
+  map-get($octopus, 'left-pc'),
+  map-get($octopus, 'bottom-pc'),
+  map-get($octopus, 'left'),
+  map-get($octopus, 'bottom')
+);
+
+@include animation-mixin(
+  lola,
+  map-get($lola, 'left-pc'),
+  map-get($lola, 'bottom-pc'),
+  map-get($lola, 'left'),
+  map-get($lola, 'bottom')
+);
+
+@include animation-mixin(
+  aubonmarche,
+  map-get($aubonmarche, 'left-pc'),
+  map-get($aubonmarche, 'bottom-pc'),
+  map-get($aubonmarche, 'left'),
+  map-get($aubonmarche, 'bottom')
+);

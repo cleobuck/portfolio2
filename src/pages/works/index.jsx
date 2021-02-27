@@ -5,11 +5,12 @@ import Lola from 'components/images/lola';
 import Octopus from 'components/images/octopus';
 import Aubonmarche from 'components/images/aubonmarche';
 
-import Work from 'components/work';
+import Work from '../../components/work';
 
 import { useResponsiveContext } from 'context';
 import CleoChair from '../../components/images/cleo-chair';
 
+import CleoTop from '../../components/images/cleo-top';
 const Projects = () => {
   const [focusedProject, setFocus] = useState(false);
 
@@ -46,9 +47,12 @@ const Projects = () => {
 
   return (
     <>
-      <h3 className={!focusedProject ? styles.hidden : ''}>And some of my projects...</h3>
-      <CleoChair className={styles.background} />
+      <h3 className={focusedProject ? styles.hidden : ''}>And some of my projects...</h3>
 
+      <div className={focusedProject ? styles.focusedBackground : ''}>
+        <CleoTop className={styles.backgroundTop} />
+        <CleoChair className={styles.background} />
+      </div>
       <Work
         giveFocus={(focus) => setFocus(focus)}
         data={data.aubonmarche}

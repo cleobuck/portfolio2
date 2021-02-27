@@ -9,7 +9,7 @@ export default ({ className }) => {
         image: file(relativePath: { eq: "cleo-chair.png" }) {
           childImageSharp {
             fluid(maxWidth: 2000, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }

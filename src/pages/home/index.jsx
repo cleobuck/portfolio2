@@ -19,21 +19,22 @@ const Header = () => {
 
           <div className={styles.content}>
             <div className={styles.titleAndSlogan}>
-              <Fade duration={1500} delay={1500} distance="0px">
+              <Fade duration={1500} delay={500} distance="0px">
                 <span className={styles.hi}>Hi! I'm</span>
               </Fade>
+
               <div className={styles.title}>
                 <h1 className={isLoaded ? styles.appear : ''}>
                   <span className={styles.firstName}>CLEO</span>
                   BUCK
                 </h1>
-                <Fade duration={1500} delay={1500} distance="0px">
+                <Fade duration={1500} delay={1000} distance="0px">
                   <h2>a web developer who secretly loves design</h2>
                 </Fade>
               </div>
             </div>
 
-            <Fade duration={1500} delay={1500} distance="0px">
+            <Fade duration={1500} delay={2000} distance="0px">
               <div className={styles.introductionWrapper}>
                 <p className={`${styles.introduction}`}>
                   After <span>a year and a half of coding </span>, I have already gone through each

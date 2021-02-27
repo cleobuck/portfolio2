@@ -30,7 +30,7 @@ export default function Work({ children, giveFocus, noneFocused, data }) {
 
   return (
     <>
-      <figure
+      <div
         className={`${styles[data.name]} ${
           !noneFocused
             ? !data.focused
@@ -39,7 +39,9 @@ export default function Work({ children, giveFocus, noneFocused, data }) {
             : styles.unfocusedMode
         } ${isFocusingOut ? data.name + '-animate-reverse' : ''}`}
       >
-        <data.src />
+        <figure className={`${styles.imageWrapper} wrapper-anim`}>
+          <data.src />
+        </figure>
         <Description
           visible={data.focused}
           title={data.alt}
@@ -50,7 +52,7 @@ export default function Work({ children, giveFocus, noneFocused, data }) {
           {' '}
           {children}
         </Description>
-      </figure>
+      </div>
     </>
   );
 }

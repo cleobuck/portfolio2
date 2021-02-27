@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styles from 'pages/skills/style.module.scss';
 
 import BackgroundImage from 'gatsby-background-image';
 
 const Background = ({ children, setLoad }) => {
-  const { desktop, medium, small } = useStaticQuery(
+  const [loaded, setLoaded] = useState();
+
+  let { desktop, desktopBlank, medium, small } = useStaticQuery(
     graphql`
       query {
         desktop: file(relativePath: { eq: "chainsaw-background.jpg" }) {
@@ -15,6 +17,7 @@ const Background = ({ children, setLoad }) => {
             }
           }
         }
+
         medium: file(relativePath: { eq: "chainsaw-background.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1400, quality: 90) {
@@ -22,6 +25,7 @@ const Background = ({ children, setLoad }) => {
             }
           }
         }
+
         small: file(relativePath: { eq: "chainsaw-background-small.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 90) {
@@ -50,6 +54,7 @@ const Background = ({ children, setLoad }) => {
     <BackgroundImage
       Tag="section"
       className={styles.background}
+      loaded={loaded}
       fluid={backgroundArtDirectionStack}
       title="background of me with a chainsaw"
       role="background"

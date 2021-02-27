@@ -10,6 +10,7 @@ const Head = () => {
         <title>{'Cleo Buck - a Javascript Web developer who loves design'}</title>
         <html lang={'en'} />
         <meta name="description" content={'Cleo Buck - Web developer'} />
+        <meta http-equiv="Cache-control" content="public"></meta>
       </Helmet>
     </>
   );
