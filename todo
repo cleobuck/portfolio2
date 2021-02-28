@@ -6,14 +6,15 @@ https://www.react-reveal.com/docs/custom/
 - Change skills
 - Add text instead of lorem ipsum
 - create color in active item in menu + open automatically on certain pages 
-- make first page animation slower
 
 
 
+- chair fixed in tablet -> fix bottoms to make everything higher
 
-- correct head for cleo chair on mobile 
-- fix moving chair in work on tablet 
-- fix skills background for mobile (head)
 
+- arrange contact page
 
 - create better navigation burger
+
+- change title
+- make better meta

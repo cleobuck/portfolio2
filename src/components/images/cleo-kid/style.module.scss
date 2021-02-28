@@ -4,16 +4,13 @@
   min-height: 100vh;
   min-width: 100vw;
   position: absolute !important;
-  bottom: 0;
-  right: 0;
+  bottom: 0%;
+  left: 0;
   img {
     width: 100%;
   }
 
   @media #{$mq-min-tablet} {
-    min-height: 100vh;
-    min-width: 100vw;
-
     bottom: 35%;
     transform: translateY(35%);
   }

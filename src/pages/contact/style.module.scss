@@ -11,6 +11,7 @@
   }
   align-items: center;
   position: relative;
+
   p {
     color: white;
     margin-top: 130px;
@@ -70,14 +71,11 @@
   .background {
     position: absolute;
     height: 35vh;
+    width: 50vw;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -10%);
     margin-bottom: 0;
-
-    img {
-      height: 100%;
-    }
 
     @media #{$mq-min-tablet} {
       display: none;

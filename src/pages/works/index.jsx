@@ -49,7 +49,7 @@ const Projects = () => {
     <>
       <h3 className={focusedProject ? styles.hidden : ''}>And some of my projects...</h3>
 
-      <div className={focusedProject ? styles.focusedBackground : ''}>
+      <div className={`${styles.veilBackground} ${focusedProject ? styles.focusedBackground : ''}`}>
         <CleoTop className={styles.backgroundTop} />
         <CleoChair className={styles.background} />
       </div>

@@ -47,9 +47,9 @@
   .lola-animate,
   .aubonmarche-animate {
     figure.wrapper-anim {
-      animation: 0.5s sizeanimTablet 0.5s forwards;
+      // animation: 1s sizeanimTablet 1s forwards;
       @media #{$mq-min-pc} {
-        animation: 0.5s sizeanim 0.5s forwards;
+        animation: 1s sizeanim 1s forwards;
       }
     }
   }
@@ -58,9 +58,9 @@
   .lola-animate-reverse,
   .aubonmarche-animate-reverse {
     figure.wrapper-anim {
-      animation: reversesizeanimTablet 0.5s forwards;
+      // animation: reversesizeanimTablet 1s forwards;
       @media #{$mq-min-pc} {
-        animation: reversesizeanim 0.5s forwards;
+        animation: reversesizeanim 1s forwards;
       }
     }
   }
@@ -120,7 +120,7 @@
     height: $startProjectHeightTablet;
   }
   100% {
-    height: 39vh;
+    height: 45vh;
   }
 }
 
@@ -135,7 +135,7 @@
 
 @keyframes reversesizeanimTablet {
   0% {
-    height: 39vh;
+    height: 45vh;
   }
   100% {
     height: $startProjectHeightTablet;

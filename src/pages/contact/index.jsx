@@ -3,7 +3,8 @@ import styles from './style.module.scss';
 import GitHub from 'assets/images/GitHub.svg';
 import Mail from 'assets/images/Email.svg';
 import Linkedin from 'assets/images/LinkedIn.svg';
-import background from 'assets/images/cleo-chair.png';
+import CleoChair from 'components/images/cleo-chair-full';
+
 import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
@@ -29,7 +30,7 @@ const Contact = () => {
       </Fade>
 
       <figure className={styles.background}>
-        <img src={background} alt="" />
+        <CleoChair className={styles.cleoChair} />
       </figure>
     </>
   );

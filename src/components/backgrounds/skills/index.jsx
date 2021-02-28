@@ -54,7 +54,6 @@ const Background = ({ children, setLoad }) => {
     <BackgroundImage
       Tag="section"
       className={styles.background}
-      loaded={loaded}
       fluid={backgroundArtDirectionStack}
       title="background of me with a chainsaw"
       role="background"
