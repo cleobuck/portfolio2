@@ -12,20 +12,23 @@
     color: white;
 
     font-size: 1.3rem;
-    margin: 20px;
-    padding: 10px;
+    margin: 0;
+    padding: 30px;
+    opacity: 1;
+    transition-delay: 1s;
+    transition: 1s all;
 
     @media #{$mq-min-tablet} {
       padding-top: 75px;
     }
 
     @media #{$mq-min-pc} {
-      padding-top: 10px;
+      padding-top: 30px;
     }
 
     &.hidden {
       @media #{$mq-min-pc} {
-        display: none;
+        opacity: 0;
       }
     }
   }
@@ -35,9 +38,12 @@
 
 figure.image-wrapper {
   @media #{$mq-min-tablet} {
+    height: $startProjectHeightTablet;
+  }
+  @media #{$mq-min-pc} {
     height: $startProjectHeight;
   }
-
+  margin: 0;
   box-shadow: -5px 10px 12px -6px rgba(0, 0, 0, 0.75);
   overflow: hidden;
   border-radius: 10px;
@@ -58,7 +64,7 @@ figure.image-wrapper {
     height: 100%;
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 0;
     transition: 1s background;
     transition-delay: 1s;
   }
@@ -73,7 +79,8 @@ figure.image-wrapper {
 
 .aubonmarche,
 .lola,
-.octopus {
+.octopus,
+.cpas {
   width: 70vw;
   margin: 20px auto;
   transition: 0.5s all;
@@ -92,11 +99,12 @@ figure.image-wrapper {
     }
     transition: 1s all;
     &.unfocused-mode {
-      transition: transform 2s ease-out, opacity 0.5s linear;
+      transition: transform 1s ease-out, opacity 0.5s linear, z-index 0.5s ease-out 0.5s;
       transform: translateZ(0);
+      z-index: 0;
       &:hover {
         transform: scale(1.1);
-        z-index: 100000;
+        z-index: 3;
         perspective-origin: 10px 10px;
       }
     }
@@ -147,21 +155,33 @@ figure.image-wrapper {
   }
 }
 
+.cpas {
+  @media #{$mq-min-tablet} {
+    left: map-get($cpas, 'left');
+    bottom: map-get($cpas, 'bottom');
+  }
+  @media #{$mq-min-pc} {
+    left: map-get($cpas, 'left-pc');
+    bottom: map-get($cpas, 'bottom-pc');
+  }
+}
+
 // ----------------------------- background ---------------------------------- //
 
 div.background {
   display: none;
   z-index: 2;
 
-  bottom: 0;
   position: absolute !important;
   @media #{$mq-min-tablet} {
     display: flex;
     width: 40vw;
     transform: translateX(-50%);
+    bottom: 20vw;
     @media #{$mq-min-pc} {
       transform: translate(-50%, 30%);
       width: 30vw;
+      bottom: 0;
     }
 
     left: 50%;
@@ -178,8 +198,8 @@ div.backgroundTop {
   @media #{$mq-min-tablet} {
     display: flex;
     width: 20.48vw;
-    bottom: 45.5vw;
-    transform: translateX(-47.6%);
+    bottom: 65.64vw;
+    transform: translateX(-47.5%);
     @media #{$mq-min-pc} {
       transform: translate(-47.5%, 30%);
       width: 15.36vw;
@@ -226,9 +246,9 @@ div.backgroundTop {
     top: 0;
     right: 0;
     @media #{$mq-min-tablet} {
-      transition: 2s opacity 1s;
+      transition: 2s opacity $description-delay;
       padding: 20px;
-      left: 50vw;
+      left: 55vw;
       top: 5vh;
     }
 

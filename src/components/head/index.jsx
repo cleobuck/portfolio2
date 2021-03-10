@@ -7,7 +7,7 @@ const Head = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{'Cleo Buck - a Javascript Web developer who loves design'}</title>
+        <title>{'Cleo Buck - a full-stack Web developer who loves design'}</title>
         <html lang={'en'} />
         <meta name="description" content={'Cleo Buck - Web developer'} />
         <meta http-equiv="Cache-control" content="public"></meta>

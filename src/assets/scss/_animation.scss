@@ -45,63 +45,79 @@
 @media #{$mq-min-tablet} {
   .octopus-animate,
   .lola-animate,
-  .aubonmarche-animate {
+  .aubonmarche-animate,
+  .cpas-animate {
     figure.wrapper-anim {
       // animation: 1s sizeanimTablet 1s forwards;
       @media #{$mq-min-pc} {
-        animation: 1s sizeanim 1s forwards;
+        animation: #{$size-anim-duration} sizeanim #{$anim-duration} forwards;
       }
     }
   }
 
   .octopus-animate-reverse,
   .lola-animate-reverse,
-  .aubonmarche-animate-reverse {
+  .aubonmarche-animate-reverse,
+  .cpas-animate-reverse {
     figure.wrapper-anim {
       // animation: reversesizeanimTablet 1s forwards;
       @media #{$mq-min-pc} {
-        animation: reversesizeanim 1s forwards;
+        animation: reversesizeanim #{$size-anim-duration} forwards;
       }
     }
   }
   .octopus-animate {
-    animation: octopusTablet 1s forwards;
+    animation: octopusTablet #{$anim-duration} forwards;
 
     @media #{$mq-min-pc} {
-      animation: octopus 1s forwards;
+      animation: octopus #{$anim-duration} forwards;
     }
   }
   .lola-animate {
-    animation: lolaTablet 1s forwards;
+    animation: lolaTablet #{$anim-duration} forwards;
     @media #{$mq-min-pc} {
-      animation: lola 1s forwards;
+      animation: lola #{$anim-duration} forwards;
+    }
+  }
+
+  .cpas-animate {
+    animation: cpasTablet #{$anim-duration} forwards;
+    @media #{$mq-min-pc} {
+      animation: cpas #{$anim-duration} forwards;
     }
   }
 
   .aubonmarche-animate {
-    animation: aubonmarcheTablet 1s forwards;
+    animation: aubonmarcheTablet #{$anim-duration} forwards;
     @media #{$mq-min-pc} {
-      animation: aubonmarche 1s forwards;
+      animation: aubonmarche #{$anim-duration} forwards;
     }
   }
 
   .octopus-animate-reverse {
-    animation: octopusTabletReverse 1s forwards;
+    animation: octopusTabletReverse #{$anim-duration} forwards;
     @media #{$mq-min-pc} {
-      animation: octopusReverse 1s forwards;
+      animation: octopusReverse #{$anim-duration} forwards;
     }
   }
   .lola-animate-reverse {
-    animation: lolaTabletReverse 1s forwards;
+    animation: lolaTabletReverse #{$anim-duration} forwards;
     @media #{$mq-min-pc} {
-      animation: lolaReverse 1s forwards;
+      animation: lolaReverse #{$anim-duration} forwards;
+    }
+  }
+
+  .cpas-animate-reverse {
+    animation: cpasTabletReverse #{$anim-duration} forwards;
+    @media #{$mq-min-pc} {
+      animation: cpasReverse #{$anim-duration} forwards;
     }
   }
 
   .aubonmarche-animate-reverse {
-    animation: aubonmarcheTabletReverse 1s forwards;
+    animation: aubonmarcheTabletReverse #{$anim-duration} forwards;
     @media #{$mq-min-pc} {
-      animation: aubonmarcheReverse 1s forwards;
+      animation: aubonmarcheReverse #{$anim-duration} forwards;
     }
   }
 }
@@ -120,13 +136,13 @@
     height: $startProjectHeightTablet;
   }
   100% {
-    height: 45vh;
+    height: 42vh;
   }
 }
 
 @keyframes reversesizeanim {
   0% {
-    height: 70vh;
+    height: 42vh;
   }
   100% {
     height: $startProjectHeight;
@@ -175,26 +191,24 @@
   @keyframes #{$tablet} {
     0% {
       z-index: 0;
-    }
-
-    20% {
       left: $tabletLeft;
       bottom: $tabletBottom;
     }
+
     95% {
       z-index: 0;
     }
     100% {
       z-index: 5;
       left: 2vw;
-      bottom: 10vh;
+      bottom: 20vh;
     }
   }
 
   @keyframes #{$tabletReverse} {
     from {
-      left: 12vw;
-      bottom: 5vh;
+      left: 2vw;
+      bottom: 20vh;
       z-index: 0;
     }
     to {
@@ -227,4 +241,12 @@
   map-get($aubonmarche, 'bottom-pc'),
   map-get($aubonmarche, 'left'),
   map-get($aubonmarche, 'bottom')
+);
+
+@include animation-mixin(
+  cpas,
+  map-get($cpas, 'left-pc'),
+  map-get($cpas, 'bottom-pc'),
+  map-get($cpas, 'left'),
+  map-get($cpas, 'bottom')
 );

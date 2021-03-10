@@ -51,25 +51,36 @@ $mq-min-xxx: '(min-width: #{$bp-xxx})';
 
 $startProjectHeight: 40vh;
 
-$startProjectHeightTablet: 30vh;
+$startProjectHeightTablet: 35vh;
+
+$anim-duration: 0.75s;
+$size-anim-duration: 0.5s;
+$description-delay: $anim-duration + $size-anim-duration;
 
 $lola: (
   'left': 50vw,
-  'bottom': 20vh,
+  'bottom': 30vh,
   'left-pc': 50vw,
   'bottom-pc': 30vh,
 );
 
+$cpas: (
+  'left': 50vw,
+  'bottom': 30vh,
+  'left-pc': 25vw,
+  'bottom-pc': 45vh,
+);
+
 $octopus: (
   'left': 65vw,
-  'bottom': 10vh,
+  'bottom': 20vh,
   'left-pc': 65vw,
   'bottom-pc': 5vh,
 );
 
 $aubonmarche: (
-  'left': 5vw,
-  'bottom': 12vh,
-  'left-pc': 18vw,
+  'left': 2vw,
+  'bottom': 20vh,
+  'left-pc': 12vw,
   'bottom-pc': 10vh,
 );
