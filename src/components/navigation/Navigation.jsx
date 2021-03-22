@@ -8,7 +8,16 @@ export default function Navigation() {
   const [openMenu, toggleMenu] = useState(false);
 
   const { state, dispatch } = useResponsiveContext();
-  const { isMobile } = state;
+
+  const { isMobile, home, skills, works, contact } = state;
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!openMenu && home && !isMobile) {
+        toggleMenu(true);
+      }
+    }, 12000);
+  }, []);
 
   const navAnimate = (id) => {
     if (isMobile) {
@@ -35,7 +44,7 @@ export default function Navigation() {
       <input type="checkbox" id="menu" checked={openMenu} className={styles.menuCheckbox} />{' '}
       <div className={`${styles.menu} ${openMenu ? styles.openMenu : ''}`}>
         <Link
-          activeClass="active"
+          className={home ? styles.active : ''}
           to="home"
           spy={true}
           smooth={true}
@@ -45,7 +54,7 @@ export default function Navigation() {
           Home
         </Link>
         <Link
-          activeClass="active"
+          className={skills ? styles.active : ''}
           to="skills"
           spy={true}
           smooth={true}
@@ -55,7 +64,7 @@ export default function Navigation() {
           Skills
         </Link>
         <Link
-          activeClass="active"
+          className={works ? styles.active : ''}
           to="works"
           spy={true}
           smooth={true}
@@ -67,7 +76,7 @@ export default function Navigation() {
         </Link>
 
         <Link
-          activeClass="active"
+          className={contact ? styles.active : ''}
           to="contact"
           spy={true}
           smooth={true}

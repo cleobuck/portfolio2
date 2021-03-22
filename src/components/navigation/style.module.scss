@@ -136,9 +136,11 @@
 
   a {
     color: white !important;
+    &.active {
+      color: lighten($stand-out-color, 5%) !important;
+    }
     text-decoration: none;
     cursor: pointer;
-    display: none;
     margin-right: 40px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -147,11 +149,8 @@
     @media #{$mq-min-pc} {
       margin-top: 0;
     }
-    &.active {
-      font-size: 1.6rem;
-      color: black;
-    }
   }
+
   &.open-menu {
     opacity: 1;
     transition: opacity 0.5s 0.2s ease;

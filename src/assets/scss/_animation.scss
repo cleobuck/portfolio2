@@ -1,5 +1,23 @@
 @import 'assets/scss/abstracts/_variables.scss';
 
+.letter-spacing-animation {
+  animation: 3s letterSpacing 8s;
+}
+
+@keyframes letterSpacing {
+  0% {
+    letter-spacing: normal;
+  }
+
+  50% {
+    letter-spacing: 7px;
+  }
+
+  100% {
+    letter-spacing: normal;
+  }
+}
+
 .appearFromDark {
   &:after {
     opacity: 1;
