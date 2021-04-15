@@ -4,9 +4,6 @@ https://www.react-reveal.com/docs/custom/
 
 - Arrange contact page
 - Create better navigation burger
-- make mock apps 
-   + add mock names + first names + street adresses
-   + host them on heroku  
 - check all formats
 - Make better meta
 
@@ -14,6 +11,9 @@ https://www.react-reveal.com/docs/custom/
 email: https://www.hostinger.com/tutorials/email/how-to-set-up-gmail-for-your-own-domain
 
 
+free ssl for hostinger: 
+
+https://www.hostinger.com/tutorials/ssl/how-to-install-free-ssl-from-lets-encypt-on-shared-hosting
 
 
 - lambdatests

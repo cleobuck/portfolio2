@@ -41,14 +41,14 @@ const Projects = () => {
       name: 'cpas',
       src: CPAS,
       alt: 'A social shop management app',
-      href: 'https://aubonmarchelbv.com',
+      href: 'http://social-shop.cleobuck.com',
       focused: focusedProject === 'cpas',
     },
     aubonmarche: {
       name: 'aubonmarche',
       src: Aubonmarche,
       alt: 'Au Bon Marche - A social shop',
-      href: 'https://appli.aubonmarchelbv.com/',
+      href: 'http://social-shop-preorders.cleobuck.com/',
       focused: focusedProject === 'aubonmarche',
     },
   };
